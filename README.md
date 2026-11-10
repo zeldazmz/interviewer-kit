@@ -129,10 +129,10 @@ Both samples are fictional. The English sample is set in a **US DTC context** �
 
 | | Live Preview | Source | Scenario |
 |---|---|---|---|
-| 🇨🇳 Chinese | [在线打开](https://zeldazmz.github.io/interviewer-kit/%E6%9D%8E%E6%98%8E-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E7%BB%8F%E7%90%86-Interview-Guide.html) | [查看源码](examples/李明-用户增长经理-Interview-Guide.html) | TO B/G 业务增长类岗位 · 通用 JD |
-| 🇺🇸 English | [Live demo](https://zeldazmz.github.io/interviewer-kit/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | [Source](examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | Series B DTC sustainable home goods · US remote · Shopify Plus gap · two short tenures + 14-month consulting gap |
+| 🇨🇳 Chinese | [在线打开](https://zeldazmz.github.io/interviewer-kit/examples/%E6%9D%8E%E6%98%8E-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E7%BB%8F%E7%90%86-Interview-Guide.html) | [查看源码](examples/李明-用户增长经理-Interview-Guide.html) | TO B/G 业务增长类岗位 · 通用 JD |
+| 🇺🇸 English | [Live demo](https://zeldazmz.github.io/interviewer-kit/examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | [Source](examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | Series B DTC sustainable home goods · US remote · Shopify Plus gap · two short tenures + 14-month consulting gap |
 
-> **Note**: GitHub Pages deploys from the `examples/` directory, so the live URLs drop the `examples/` prefix. Pages take 1–2 minutes to deploy after a push — if you get a 404, wait and refresh.
+> **Note**: This repo uses GitHub Pages in legacy mode — the site root maps to the repo root, so sample URLs retain the `examples/` prefix (same as the repo layout). Pages take 1–2 minutes to deploy after a push — if you get a 404, wait and refresh.
 
 ---
 
