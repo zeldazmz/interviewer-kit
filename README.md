@@ -1,7 +1,14 @@
 # interviewer-kit
 
-> A skill that generates tailored interview guide PDFs from resumes and JDs — **for interviewers, not candidates**.<br>
-> Built on a simple thesis: **interviewing is prediction, not audit**.
+[English](README.md) · [中文](README.zh-CN.md)
+
+---
+
+> **面试是预测，不是审计。**<br>
+> 一个面向面试官的开源技能——从简历和 JD 生成定制化教学型问题清单，中英双语，内置 US/EU 合规模板。
+>
+> **Interviewing is prediction, not audit.**<br>
+> An open-source skill for interviewers — generates tailored teaching-card question guides from resumes and JDs. CN / US-EU bilingual, compliance baked in.
 
 ---
 
