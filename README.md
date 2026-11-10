@@ -127,10 +127,12 @@ That's not a question bank — that's a **teaching card**. The interviewer sees 
 
 Both samples are fictional. The English sample is set in a **US DTC context** — Series B sustainable home-goods brand, remote team, real US resume conventions (education at the bottom, action-verb bullets, tool-stack specifics), and US-context HR questions (I-9 verification, no salary-history requests, equity refresh discussion).
 
-| | Path | Scenario |
-|---|---|---|
-| Chinese | [`李明-用户增长经理-Interview-Guide.html`](examples/李明-用户增长经理-Interview-Guide.html) | TO B/G 业务增长类岗位 · 通用 JD |
-| English | [`Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html`](examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | Series B DTC sustainable home goods · US remote · Shopify Plus gap · two short tenures + 14-month consulting gap |
+| | Live Preview | Source | Scenario |
+|---|---|---|---|
+| 🇨🇳 Chinese | [在线打开](https://zeldazmz.github.io/interviewer-kit/%E6%9D%8E%E6%98%8E-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E7%BB%8F%E7%90%86-Interview-Guide.html) | [查看源码](examples/李明-用户增长经理-Interview-Guide.html) | TO B/G 业务增长类岗位 · 通用 JD |
+| 🇺🇸 English | [Live demo](https://zeldazmz.github.io/interviewer-kit/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | [Source](examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | Series B DTC sustainable home goods · US remote · Shopify Plus gap · two short tenures + 14-month consulting gap |
+
+> **Note**: GitHub Pages deploys from the `examples/` directory, so the live URLs drop the `examples/` prefix. Pages take 1–2 minutes to deploy after a push — if you get a 404, wait and refresh.
 
 ---
 
