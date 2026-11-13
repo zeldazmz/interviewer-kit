@@ -4,242 +4,195 @@
 
 ---
 
-> **面试是预测，不是审计。**<br>
-> 一个面向面试官的开源技能——从简历和 JD 生成定制化教学型问题清单，中英双语，内置 US/EU 合规模板。
->
-> **Interviewing is prediction, not audit.**<br>
-> An open-source skill for interviewers — generates tailored teaching-card question guides from resumes and JDs. CN / US-EU bilingual, compliance baked in.
+> **Interviewer-side interview kit · 面试官侧人岗匹配问题清单生成器**
 
----
+## The problem · 痛点
 
-## Why most interviews are ineffective
+Most business interviewers have had no structured interview training. With only a resume and a JD in hand, the questions that come out are "tell me about yourself," "why are you leaving," "what did you do on that project." Thirty minutes later, the decision rests on fluency and presence rather than evidence of delivery.
 
-Nearly every interview guide, AI tool, and coaching framework starts from the same assumption: "how do I catch a lie?" This produces a familiar outcome — candidates get good at being audited (STAR scripts, credential recitation), interviewers get good at being suspicious, and the conversation spends most of its time on low-signal verification.
+Run the same role past two interviewers and the conclusions rarely align — one weighs industry background, another weighs communication style — so the hiring decision falls back to gut feel. HRBPs absorb the cost: a fresh outline for every session, with no guarantee the business interviewer will follow it.
 
-What you end up with is a 30-minute chat that answers "did they do this?" but never answers "will they do *that* here?"
+业务面试官多数没有接受过结构化面试训练。手里只有一份简历和一段岗位描述，能问出口的往往是"介绍一下你自己""为什么离职""这个项目你做了什么"。三十分钟过去，判断依据主要是表达是否流畅、气场是否合拍，而不是这个人能否在岗位上交付。
 
-**interviewer-kit takes the opposite approach.** It anchors questions to the candidate's *actual signature work* — the projects they proudly cite, the numbers they choose to highlight — and asks questions that can *only* be answered by someone who did the thing, because the fake answers have different grammatical structure, different granularity, and different physics.
+同一岗位换两位面试官，结论往往对不上：有人看行业背景，有人看沟通感觉，最终决策退回到"我觉得还行"。成本落在 HRBP 身上——每场面试重新写一份提纲，还不知道业务方会不会照着问。
 
-The output is a set of **teaching cards**: for each question, it tells you *what to ask, why it works, what strong answers sound like, what red flags sound like, and how to follow up without breaking the curiosity posture*. Using the cards is how the interviewer learns the method.
+## The approach · 解决方案
 
----
+Two inputs, one deliverable. The JD defines what the role actually requires — hard requirements, preferred items, transferable skills. The resume locates the outcomes the candidate chose to emphasize. Questions come from the intersection of the two, not from a generic question bank.
 
-## What it is
+Each card states the question, its design rationale, what a strong answer contains, what a red flag looks like, and how to follow up. The output is a single HTML file: edit any line in place, export a long image, send it to the interviewer.
 
-| | |
+两份输入，一份交付物。JD 用来确定岗位真正要求什么——硬条件、优先项、可迁移能力；简历用来定位候选人主动强调的成果。问题从两者的交叉点产生，不从通用题库里挑。
+
+每张卡写明问题本身、设计依据、合格回答应包含什么、红旗信号长什么样、以及如何追问。产物是单文件 HTML：任何一行都能就地修改，导出长图后直接发给面试官。
+
+```
+JD 文本 / 简历文件           一次对话
+      │                         │
+      ▼                         ▼
+┌──────────────┐          ┌──────────────┐
+│ 核心要求提取   │          │ 标志性成果锚定  │
+│ 哪些硬条件     │  ──►    │ 哪几个项目能   │
+│ 哪些优先项     │          │ 证明这些条件   │
+│ 哪些可迁移     │          │                │
+└──────────────┘          └──────────────┘
+      │                         │
+      └─────────┬───────────────┘
+                ▼
+          问题卡 + 节奏表
+                │
+                ▼
+         可编辑 HTML
+                │
+                ▼
+         750px 长图导出
+          （微信 / Slack / Lark 直接发）
+```
+
+Three input modes: JD plus resume (default); a role from the built-in library plus resume (skips JD extraction, for repeat hiring in the same function); resume only (generic profile, with fit explicitly marked as not role-anchored).
+
+三种输入方式：JD 与简历（默认）；常用岗位库中的岗位与简历（跳过 JD 采集，适合同类岗位重复招聘）；仅简历（按通用画像出卡，匹配度明确标注"缺少岗位锚定"）。
+
+## The value · 价值
+
+| Value | 价值 |
 |---|---|
-| ✅ Tailored | Generated from *this specific resume + this specific JD*, not a generic question bank |
-| ✅ Predictive | Questions probe future transfer, not past recitation |
-| ✅ Educational | Every card carries the method — design principle, scoring anchors, follow-up tactics |
-| ✅ Zero runtime deps | Single HTML file, inline rendering engine (html2canvas), no network calls at export time |
-| ✅ Chinese + English | Two complete localizations, US/EU/UK compliance notes built into the English path |
+| **Evidence-based** — every judgment traces to a specific line in the resume or a specific answer | **判断有依据** — 每条结论都能对应到简历或回答中的具体证据，不是印象分 |
+| **Comparable** — one set of dimensions and anchors per role, so interviewer conclusions can be compared | **标准可对齐** — 同一岗位共用一套评估维度与问题锚点，多位面试官的结论可横向比较 |
+| **Prepared once** — HRBPs input once and distribute, instead of rewriting per session | **准备只做一次** — HRBP 输入一次即可分发，不必逐场重写 |
+| **Reusable** — cards accumulate as role assets for the next hire in the same function | **可持续复用** — 问题卡沉淀为岗位资产，下次招聘同类岗位直接调用 |
 
-## What it is *not*
+## Two moments · 两个使用场景
 
-- ❌ Not a candidate-side interview prep tool
-- ❌ Not an AI "scoring" tool — it does not assign ratings to candidates
-- ❌ Not an ATS or HR platform — it does not track applicants or store PII
-- ❌ Not restricted to a single industry — designed for knowledge work across B2B, technology, operations, finance, and staff functions
+### Before the interview · 面试前准备
+
+HRBP drops in the JD and resume, confirms the extracted profile once, and receives a complete guide: fit assessment, checkpoints, nine question cards, a 30-minute timing plan. Review it, rewrite what doesn't fit, add a follow-up, export the long image, post it to the interviewer group. The interviewer opens it ten minutes before the session and knows what to ask and what a passing answer sounds like.
+
+HRBP 把岗位描述与简历一起提交，确认一次画像，即得到该岗位的完整清单：匹配度诊断、待考察点、九张问题卡、30 分钟节奏表。审阅一遍，改掉不适用的提问、补上需要的追问，导出长图发到面试官群。面试官在开始前十分钟打开，知道这 30 分钟要问什么、听到什么算过关。
+
+### During the interview · 面试中提问
+
+The interviewer follows the timing plan: open with a broad question and let the candidate finish, then check the answer against the card's anchors and red flags. Where the answer stays vague, follow the card's path — break down the number, ask for the timeline, ask for the failed case — instead of improvising. No dead air, and no interrogation spiral.
+
+面试官按节奏表推进：先用开放问题让候选人讲完，再对照卡上的高分锚定与红旗信号判断回答落在哪一侧。回答含糊时，沿卡上的路径追问——拆开数字构成、要时间线、问失败案例——而不是临场想问题。既不冷场，也不会因为追问过密把候选人逼进应试状态。
 
 ---
 
-## Case demo
+## What it doesn't · 它不做什么
 
-All sample inputs and outputs are in [`examples/`](examples/). The candidate is fictional. Here is the compressed picture of what happens in one run:
+- ❌ **不做候选端** — 不是刷题工具、不是简历润色器
+- ❌ **不做 AI 打分** — 不给候选人评级。预测人岗匹配需要具体证据，不是一个分数
+- ❌ **不做 ATS / HR 平台** — 不追踪申请人、不存储 PII、不集成招聘流程
+- ❌ **不替代合规审查** — 内置了禁止问题的护栏，但不是穷举，正式使用前请与你所在区域的法务或合规负责人确认
 
-### Input
+---
 
-<details><summary>JD (condensed, Northwind Supply)</summary>
+## Sample outputs · 样例产物
 
-> **Senior Growth Manager** · Northwind Supply · Series B sustainable home goods · Remote (US) · $140–170K base + 0.15% equity refresh + variable
->
-> Own the end-to-end growth funnel; lead a team of 5–8 growth marketers; manage a $2.4M annual paid budget holding blended CAC flat at ~$38; partner with Product on site optimization. 7+ years in DTC / consumer growth. Data-driven, SQL proficient. **Preferred**: Shopify Plus, SMS marketing (Klaviyo), creator partnerships.
+两份样例均为虚构。英文样例设定在**美国 DTC 场景**（B 轮可持续家居品牌、远程团队、真实美国简历规范、US 语境 HR 问题），不是"从中文翻译过来"的感觉。
 
-</details>
-
-<details><summary>Resume (condensed, Alex Johnson)</summary>
-
-> 7+ years building user acquisition and retention for consumer and e-commerce brands. Led growth at a DTC pet brand (PawPrints) to monthly revenue $0 → $2.4M, CAC held at $41. Built a Klaviyo referral program that hit 18% of new users at $19 CAC (lower than any paid channel). Previous role: EdTech scale-up, grew app from 0 → 320K users, CAC $39 → $26. Built team of 7 (1 departure in 18 months). Currently 14-month consulting gap — three early-stage DTC engagements. SQL, Looker, Shopify Pro, Klaviyo, TikTok Ads. *Two short tenures* (18 mo PawPrints, 2.5 yr EdTech).
-
-</details>
-
-### What the skill produces
-
-**1. Fit summary** — not a scorecard, a diagnosis.
-
-| Dimension | Verdict | Reasoning |
-|---|---|---|
-| Years, outcome ownership, CAC track record | ✅ Met | 7+ yrs, DTC scaled, held CAC flat while growing |
-| Data stack (SQL, Looker), team building | ✅ Met | SQL + Looker, built team of 7, 1 departure in 18 mo |
-| DTC business model | ✅ Met | PawPrints + LearnSphere are both DTC/consumer |
-| Paid budget scope | ⚠️ Partial | Northwind is $2.4M annual; his largest was blended, need to confirm top-of-funnel ownership |
-| Sustainable category transfer | ❌ Gap | Pet vs. home goods; purchase frequency and mindset are different |
-| Shopify Plus (preferred JD) | ❌ Gap | Used Shopify Pro, not Plus |
-| Overall | **Medium** | Strong outcomes + stability risk from two short tenures + 14-month gap |
-
-**2. Six checkpoints** — signals to look for, with *how to verify*:
-
-| Signal | Type | What to probe |
-|---|---|---|
-| 14-month consulting gap | Red line | Confirm engagements with deliverables; facts only, no personal questions |
-| Two short tenures (18 mo + 2.5 yr) | Core | Exit logic; does the decision pattern repeat? |
-| "$41 blended CAC" attribution | Core | What was included? Which channel drove it down from $45 target? |
-| Team of 7 — 1 departure | Core | Timing relative to founder strategy shift; was anyone let go? |
-| Budget scale match | General | His largest blended vs. Northwind's $2.4M annual — how would he adjust allocation? |
-| Sustainable home-goods transfer | General | Ask how he'd learn the category in 60 days — never "have you sold home goods?" |
-
-**3. Nine teaching cards** — here is one of them, verbatim:
-
-```
-Q1 · Primary: CAC control at scale · Secondary: metric integrity, budget ownership
-
-Question
-At PawPrints you held blended CAC flat at $41 — below your initial $45 target —
-while scaling from $0 to $2.4M monthly revenue. Break down the $41: what's in it,
-which specific channel or action drove it down from $45, and how did CAC trend
-in months 10–18 when you were at scale?
-
-Why this works
-Anchored directly to the JD's core requirement: "scale while holding CAC stable".
-Asking for composition and trend over time is the fastest way to distinguish a
-trend from a one-month anomaly — real operators know the quarterly trajectory,
-not just the headline number.
-
-Strong signals
-· Cites three channels and their individual CACs vs. blended
-· Names a specific action (TikTok creative refresh, referral K-factor tuning)
-· Describes month 10–18 trend honestly — not flat-line, with context
-· Mentions cost rebound or saturation, even if CAC held
-
-Red flags
-· Totals only, no channel composition
-· Blames "more efficient spend" — no specific lever
-· Claims CAC was flat every month at scale (unrealistic)
-· Cannot say what was included in the number
-
-Follow-ups
-[Calibrate]          Does the $41 include referral costs or media spend only?
-[Time-series check]  Did CAC stay below $41 every month through month 18?
-[Stress-test]        20% budget cut — which channels to protect, which to reallocate?
-[Counterexample]     Did any channel not make it past 90 days? What killed it?
-```
-
-That's not a question bank — that's a **teaching card**. The interviewer sees the question, *why* it works, what a good answer sounds like, what to follow up with, and what to look for. Using the cards is how you learn the method.
-
-**4. Agenda** — 30-minute business interview, 30-minute HR interview, with pacing notes.
-
-**5. Editable HTML export** — click anything to edit, export as a long PNG or JPEG. Chinese products render at 750px (clear at 1.75x scale) with a responsive mobile view. English products follow the same layout, with UI strings switching automatically when `lang="en"`.
-
-### Sample outputs (open them in a browser)
-
-Both samples are fictional. The English sample is set in a **US DTC context** — Series B sustainable home-goods brand, remote team, real US resume conventions (education at the bottom, action-verb bullets, tool-stack specifics), and US-context HR questions (I-9 verification, no salary-history requests, equity refresh discussion).
-
-| | Live Preview | Source | Scenario |
+| | Live Preview · 在线预览 | Source · 源码 | Scenario · 场景 |
 |---|---|---|---|
-| 🇨🇳 Chinese | [在线打开](https://zeldazmz.github.io/interviewer-kit/examples/%E6%9D%8E%E6%98%8E-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E7%BB%8F%E7%90%86-Interview-Guide.html) | [查看源码](examples/李明-用户增长经理-Interview-Guide.html) | TO B/G 业务增长类岗位 · 通用 JD |
-| 🇺🇸 English | [Live demo](https://zeldazmz.github.io/interviewer-kit/examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | [Source](examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | Series B DTC sustainable home goods · US remote · Shopify Plus gap · two short tenures + 14-month consulting gap |
-
-> **Note**: This repo uses GitHub Pages in legacy mode — the site root maps to the repo root, so sample URLs retain the `examples/` prefix (same as the repo layout). Pages take 1–2 minutes to deploy after a push — if you get a 404, wait and refresh.
+| 🇨🇳 中文 | [在线打开](https://zeldazmz.github.io/interviewer-kit/examples/%E6%9D%8E%E6%98%8E-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E7%BB%8F%E7%90%86-Interview-Guide.html) | [查看源码](examples/李明-用户增长经理-Interview-Guide.html) | TO B/G 业务增长类岗位 · 通用 JD |
+| 🇺🇸 English | [Live demo](https://zeldazmz.github.io/interviewer-kit/examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | [Source](examples/Alex-Johnson-Senior-Growth-Manager-Interview-Guide.html) | Series B DTC sustainable home goods · US remote |
 
 ---
 
-## Workflow
+## How it works · 五步工作流
 
-The skill runs in a single conversation (the Agent calls it once). Five steps, all with explicit stopping criteria — the Agent cannot proceed until the prior step's output meets the spec.
+技能在一次对话中跑完。每步有明确停止条件——上一步输出不符合规范，不能进入下一步。
 
 | Step | Input | Output |
 |---|---|---|
-| 1. Profile collection | Resume file + JD (text) | Structured profile + 3 success factors |
-| 2. Analysis | Structured profile | Fit summary + dimension verdicts + checkpoints |
-| 3. Question design | Analysis + success factors | Teaching cards (business + HR) + agenda |
-| 4. Self-check | Full question list | Ten-item checklist; failed cards must be re-written |
-| 5. HTML packaging | All prior outputs | Editable HTML file, ready to export |
+| **1. Profile · 画像采集** | JD + resume file | 结构化画像 · 3 条 success factors |
+| **2. Analyze · 分析** | 结构化画像 | 逐维匹配度 · 待考察点（带验证方式） · 一句话诊断 |
+| **3. Design · 问题设计** | 分析结果 + success factors | 问题卡（业务面 7–10 张 + HR 面 3–4 段） · 节奏表 |
+| **4. Self-check · 自检** | 完整问题清单 | 十项检查清单；不达标卡片必须重做 |
+| **5. Pack · HTML 打包** | 所有前置输出 | 可编辑 HTML 文件，导出即用 |
 
-The self-check is not decorative. In testing it caught real failures — e.g., "cross-functional influence was only covered as a secondary dimension, missing from the main dimensions" — and forced re-design.
-
----
-
-## Features
-
-### Methodology layer
-
-- **3-source question generation**: success factors (4–5 cards, test ceiling) · scenario forward-look (1–2 cards, test future fit) · risk verification (1–2 cards). Quota exists, but "designing questions just to fill quota" is explicitly prohibited.
-- **Gap question channel**: if the JD lists a *preferred* item the resume lacks, the question is always "how would you close this gap?" — never "have you done it?"
-- **Teaching-card structure**: main question → primary/secondary dimension → design principle → strong anchors ↔ red flags → follow-ups with *tag + trigger signal + stop condition*
-- **Neutral risk framing**: gaps, short tenures, and other risks are verified with a neutral frame first ("I'd like to confirm the timeline before we go deeper"), not an interrogative one
-
-### Engineering layer
-
-- Single-file HTML, inline rendering engine, no CDN, offline-capable
-- Mobile view = single-column 375px; export = 750px desktop layout (action is intentional, not a bug)
-- Adaptive canvas scale (16Kpx cap), segmented rendering for tall pages, JPEG fallback when PNG exceeds ~12 MB
-- Export failure surfaces a toast; no blank image silently "succeeds"
-- Export button busy-lock prevents double-click crashes
-- Host-adapter design (see [`references/host-adapters.md`](references/host-adapters.md)): capability-abstraction only; no hard-coded tool names
-
-### Internationalization
-
-- Language follows the interview language, not the operator language
-- English localization (`references/en-localization.md`): terminology, sentence structure, 11 follow-up tag variants
-- US / EU / UK compliance red lines: age, marital status, nationality, disability, salary history — each marked "ask / do not ask" with regional notes
-- HR interview section is **restructured** for English, not translated (four-section template replaces the Chinese one)
-- UI strings centralized in `I18N` object; buttons, toasts, confirm dialogs, export filenames all switch automatically
+自检不是装饰。实测中它抓到了真实失败——比如"跨部门影响力只出现在副维度，主维度里完全缺失"——并强制重新设计。
 
 ---
 
-## Quick start
+## Design principles · 核心设计原则
 
-### Option A — your agent supports skills
+### 方法论层
+
+- **三源制题源**：success factors 卡（4–5 张，测上限）· 情境前瞻卡（1–2 张，测未来适配）· 风险验证卡（1–2 张）。配额存在，但"为凑配额出题"被明确禁止
+- **缺口题通道**：JD 列了一个"优先项"而简历没有，问题永远是"你怎么补上这个缺口"——永远不问"你做过吗"
+- **教学卡结构**：主问题 → 主/副维度 → 设计原理 → 高分锚定 ↔ 红旗信号 → 追问路径（带 *标签 + 触发信号 + 停止条件*）
+- **中性风险框架**：空档、短任期等风险先用中性框架验证（"我想先确认一下时间线再往下聊"），不是审判式追问
+
+### 工程层
+
+- 单文件 HTML，内联渲染引擎（html2canvas），无 CDN，断网可用
+- 手机端 = 375px 单列阅读视图；导出 = 750px 桌面版式（有意为之，非 bug——1.75x scale 保证清晰度）
+- 自适应 canvas scale（上限 16Kpx），长图分段渲染，PNG 超过 ~12 MB 自动降级 JPEG
+- 导出失败弹 toast；不会悄悄生成白图然后"成功"
+- 导出按钮 busy-lock，防止双击崩溃
+- 宿主适配器设计（见 [`references/host-adapters.md`](references/host-adapters.md)）：只写能力层描述，不硬编码工具名
+
+### 国际化
+
+- 产物语言跟随**面试语言**，不跟随操作者语言
+- 英文本地化（`references/en-localization.md`）：术语、句式、11 个追问标签变体
+- US / EU / UK 合规红线：年龄、婚育、国籍、残疾、薪资历史——每项标注"可问 / 不可问"并附区域说明
+- HR 面试四段**为英文路径重构**（不是翻译，是四段模板替换了中文版）
+- UI 字符串集中在 `I18N` 对象；按钮、toast、确认框、导出文件名全部自动切换
+
+---
+
+## Use cases · 适用场景
+
+**为以下场景设计**：B2B、SaaS、增长、运营、财务、职能支持等知识工作面试——任何"过往成果能预测未来表现"、"JD 技能能映射到简历行为"的岗位。
+
+**以下场景效果较弱**：预测力弱的岗位（比如早期"潜力型"校招、高度创意型岗位的作品集）、或有强制面试格式的强监管行业（临床、制造质量等）。技能仍然会产出东西，但应该视为**草稿**，需要你再加工。
+
+---
+
+## Quick start · 快速上手
+
+### Way A — Your agent supports skills
 
 1. Clone or download this repo
 2. Drop the `interviewer-kit/` folder into your agent's skills directory
-3. Restart the agent, then paste:
-   > "帮我用 interviewer-kit 生成面试清单，附件是候选人简历"（or the English equivalent）
+3. Restart the agent, then say:
+   > "帮我用 interviewer-kit 生成面试清单，附件是候选人简历"
 
-### Option B — your agent does not support skills
+### Way B — Your agent doesn't support skills
 
-Paste the contents of `SKILL.md` + all six files under `references/` into a single conversation as context, then ask the same way. The skill runs entirely from markdown instructions — zero code execution required.
+Paste the contents of `SKILL.md` + the 6 files under `references/` into a single conversation as context, then ask the same way. The skill runs entirely on markdown instructions — zero code execution.
 
-### Host adapter note
+### Host adapter notes
 
-The skill is written in **capability terms** ("ask the user a structured question", "write the HTML file") rather than tool names. If your agent uses different tool identifiers, add a line to [`references/host-adapters.md`](references/host-adapters.md) mapping the capability to your host's tool.
-
----
-
-## Scope & boundaries
-
-**Designed for:** knowledge-work interviewing across B2B, SaaS, growth, operations, finance, and staff functions — any role where past outcome predicts future outcome and JD skill maps to resume behavior.
-
-**Less well-suited for:** roles where prediction from past behavior is weak (e.g., early-career "potential" hires, highly creative roles where past work is heavily curated), or roles in heavily regulated sectors (clinical, manufacturing quality, etc.) that have mandatory interview formats. The skill will still produce something, but you should treat the output as a *draft* that you customize.
-
-**Not intended for:** replacing legal or compliance review. The compliance notes are guidance only — review with your local counsel or compliance owner before using formally.
+The skill is written in **capability descriptions** ("ask the user a structured question", "write out an HTML file"), not tool names. If your agent uses different tool identifiers, add a mapping line in [`references/host-adapters.md`](references/host-adapters.md).
 
 ---
 
-## Compliance & data handling
+## Compliance & data · 合规与数据处理
 
-- No telemetry. No analytics. The skill does not make outbound network calls at runtime.
-- Products are single HTML files. They do not collect, store, or transmit PII after generation.
-- The skill includes internal guardrails for prohibited questions (marital status, age, salary history, disability, etc.). This is not exhaustive.
-- When sharing the output with others, consider replacing the candidate's full name with a role identifier (e.g., "Cand-A · User Growth Manager") if your org treats interview materials as sensitive.
-
----
-
-## Contributions welcome
-
-The method is open, the templates are open. Things that are genuinely useful to contribute:
-
-- New function prototypes (e.g., clinical, manufacturing quality) with verified success factors and risk signals
-- Additional follow-up tactic tags, verified across real interviews
-- Improvements to the English localization — terminology, compliance notes, scenario parameters
-- New host-adapter mappings
-
-Open an issue with a clear use case, or submit a PR.
+- No telemetry, no analytics. The skill never makes outbound network requests at runtime.
+- The output is a single HTML file. Nothing is collected, stored, or transmitted after generation.
+- The skill ships with guardrails for prohibited questions (marital status, age, salary history, disability, etc.). This is not exhaustive.
+- When sharing outputs, consider replacing full names with role identifiers (e.g. "Cand-A · Growth Manager") if your org treats interview materials as sensitive.
 
 ---
 
-## License
+## Contribute · 欢迎贡献
+
+The methodology is open, the template is open. Contributions that actually move the needle:
+
+- New function archetypes (clinical, manufacturing quality, etc.) with validated success factors and risk signals
+- New follow-up tactic tags, verified in real interviews
+- Better English localization — terminology, compliance notes, scenario parameters
+- New host adapter mappings
+
+Open an issue describing your use case, or send a PR directly.
+
+---
+
+## License · 许可证
 
 MIT — see [`LICENSE`](LICENSE).
 
-Third-party: the HTML template in `assets/template.html` inlines [html2canvas](https://github.com/niklasvh/html2canvas), which is also MIT-licensed. Thanks to the authors.
+Third-party: `assets/template.html` inlines [html2canvas](https://github.com/niklasvh/html2canvas), also MIT. Thanks to the original author.
