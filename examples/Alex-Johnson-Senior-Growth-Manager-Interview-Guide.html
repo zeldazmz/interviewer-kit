@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="en"> lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Interview Guide</title>
+<title>Alex Johnson · Senior Growth Manager · Interview Guide</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='7' fill='%231E2A44'/%3E%3Ccircle cx='11' cy='16' r='3.2' fill='%23E8833A'/%3E%3Crect x='17' y='13' width='9' height='6' rx='1.6' fill='%23FFFFFF'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -36,7 +36,7 @@
   .sec .no{font-size:17px;font-weight:700;color:var(--orange);letter-spacing:.08em}
   .sec h2{font-size:26px;font-weight:800}
   .sec .hint{font-size:16px;color:var(--ink-2);margin-left:auto;text-align:right;line-height:1.5}
-  /* ===== 匹配度 + 核心优势（合并模块） ===== */
+  /* ===== 匹配度诊断（维度 + 结论） ===== */
   .match{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
   .match-top{display:flex;align-items:center;gap:16px}
   .match-badge{width:82px;height:82px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;flex-shrink:0}
@@ -53,6 +53,42 @@
   .core li{font-size:17px;color:var(--ink-2);line-height:1.75;padding:7px 0;border-bottom:1px dashed var(--line);list-style:none}
   .core li:last-child{border-bottom:none}
   .core b{color:var(--ink)}
+  /* ===== 人选画像导读（中立铺开：背景 / 路径 / 能力 / 数字，不挑亮点） ===== */
+  .profile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px 6px}
+  .prof-block{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .prof-block:last-child{border-bottom:none}
+  .prof-h{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:9px;display:flex;align-items:center;gap:8px}
+  .prof-h::before{content:"";width:4px;height:14px;background:var(--orange);border-radius:2px}
+  .timeline{width:100%}
+  .tl-row{display:grid;grid-template-columns:130px 1fr 1fr 1.5fr;gap:10px;padding:7px 0;font-size:15px;color:var(--ink-2);line-height:1.6;border-bottom:1px dashed var(--line)}
+  .tl-row:last-child{border-bottom:none}
+  .tl-time{font-weight:700;color:var(--ink);white-space:nowrap}
+  .tl-org{font-weight:600;color:var(--navy)}
+  .tl-row.gap-row{background:#FBEFED;border-radius:8px;padding:7px 10px}
+  .tl-row.gap-row .tl-time{color:var(--red)}
+  .cap-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .cap-col{border-radius:12px;padding:12px 14px}
+  .cap-col.ok{background:#EFF8F3;border:1px solid #C7E4D5}
+  .cap-col.part{background:#FDF3EA;border:1px solid #F2D9BF}
+  .cap-col.gap{background:#FBEFED;border:1px solid #F0C9C2}
+  .cap-t{font-size:15px;font-weight:800;margin-bottom:8px}
+  .cap-col.ok .cap-t{color:var(--green)}
+  .cap-col.part .cap-t{color:#B45A1C}
+  .cap-col.gap .cap-t{color:var(--red)}
+  .cap-col ul{list-style:none;padding-left:0}
+  .cap-col li{font-size:14px;line-height:1.6;padding:3px 0 3px 14px;position:relative;color:var(--ink-2)}
+  .cap-col li::before{content:"";position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%}
+  .cap-col.ok li::before{background:var(--green)}
+  .cap-col.part li::before{background:#E8833A}
+  .cap-col.gap li::before{background:var(--red)}
+  .num-anchor{font-size:15px;line-height:1.8;color:var(--ink-2);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+  /* ===== 题源类型标签（F/S/C/R） ===== */
+  .qc-type{font-size:13px;font-weight:700;border-radius:6px;padding:3px 8px;background:var(--navy-2);color:#fff;flex-shrink:0}
+  .qc-type.f{background:#2A5BB7}
+  .qc-type.s{background:var(--green)}
+  .qc-type.c{background:var(--orange)}
+  .qc-type.r{background:var(--red)}
+  .qc-type.m{background:#6B4FBB}
   /* ===== 列表卡 ===== */
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-top:12px}
   .card p,.card li{font-size:17px;color:var(--ink-2);line-height:1.75}
@@ -168,6 +204,13 @@
     .page:not(.export-clone) .qcard{padding:16px 14px}
     .page:not(.export-clone) .qc-num{width:30px;height:30px;font-size:15px}
     .page:not(.export-clone) .qc-dim{font-size:13px}
+    .page:not(.export-clone) .profile{padding:14px}
+    .page:not(.export-clone) .prof-h{font-size:14px}
+    .page:not(.export-clone) .tl-row{grid-template-columns:1fr;gap:2px;font-size:13px;padding:6px 0}
+    .page:not(.export-clone) .cap-grid{grid-template-columns:1fr}
+    .page:not(.export-clone) .cap-col li{font-size:13px}
+    .page:not(.export-clone) .num-anchor{font-size:13px}
+    .page:not(.export-clone) .qc-type{font-size:11px;padding:2px 6px}
     .page:not(.export-clone) .qc-main{display:block}
     .page:not(.export-clone) .qc-label{display:block;width:auto;font-size:12px;margin-bottom:4px;padding-top:0}
     .page:not(.export-clone) .qc-question{font-size:17px;line-height:1.7}
@@ -203,351 +246,376 @@
 
 <div class="page" id="page">
 
-  <!-- ===== 1 header ===== -->
+  <!-- ===== 1 头部（人选名字 + 岗位 + 身份标识 + 面试建议聚焦条） ===== -->
+  
   <section class="hero" data-mod="header">
     <div class="grid-lines" aria-hidden="true"></div>
-    <div class="wmark editable">Sample · Fictional candidate · Internal Use Only</div>
+    <div class="wmark editable">CONFIDENTIAL · For interview assessment only</div>
     <div class="hero-top">
-      <span class="hero-badge editable">2026-11-10</span>
-      <span class="hero-badge mid editable">Fit · Medium</span>
+      <span class="hero-badge editable">Nov 25, 2026</span>
+      <span class="hero-badge mid editable">Fit · Medium-High</span>
     </div>
     <h1 class="hero-name editable">Alex Johnson</h1>
-    <p class="hero-role editable">Senior Growth Manager · Northwind Supply · Remote (US)</p>
-    <p class="hero-tag editable">7+ years consumer growth; DTC pet &amp; EdTech; held CAC flat while scaling two revenue curves</p>
+    <p class="hero-role editable">Senior Growth Manager · Remote (US)</p>
+    <p class="hero-tag editable">7-yr growth pro: built two small teams (4 &amp; 7), grew DTC revenue $0→$2.4M, held CAC flat while scaling; 14-month consulting gap needs verification</p>
     <div class="hero-focus">
-      <span class="focus-label">Focus</span>
-      <span class="focus-tag"><span class="editable">CAC control &amp; P&amp;L ownership</span><span class="chip-del" title="Remove in edit mode">×</span></span>
-      <span class="focus-tag"><span class="editable">Team retention</span><span class="chip-del" title="Remove in edit mode">×</span></span>
-      <span class="focus-tag"><span class="editable">Brand &amp; creator partnership</span><span class="chip-del" title="Remove in edit mode">×</span></span>
-      <span class="focus-tag"><span class="editable">Sustainable-category transfer</span><span class="chip-del" title="Remove in edit mode">×</span></span>
+      <span class="focus-label">Focus areas</span>
+      <span class="focus-tag"><span class="editable">Verify real management authority</span><span class="chip-del">×</span></span>
+      <span class="focus-tag"><span class="editable">Probe the 14-month gap</span><span class="chip-del">×</span></span>
+      <span class="focus-tag"><span class="editable">Confirm P&amp;L ownership</span><span class="chip-del">×</span></span>
     </div>
     <button class="add-chip" type="button" onclick="addChip()">+ Add focus</button>
   </section>
 
-  <!-- ===== 2 fit ===== -->
-  <section data-mod="match">
-    <div class="sec"><span class="no">FIT</span><h2>Fit &amp; Core Strengths</h2><span class="hint">Dimension-by-dimension against the JD</span></div>
-    <div class="match">
-      <div class="match-top">
-        <div class="match-badge mid editable">Medium</div>
-        <p class="match-summary editable"><b>Met</b>: years, outcome ownership, CAC-control track record, P&amp;L (CAC/LTV), data stack (SQL + Looker), team building, DTC model; <b>Gaps</b>: sustainable category, Shopify Plus (preferred), creator/influencer partnership (preferred); <b>Confirm</b>: Brand partnership depth (JD requires joint ownership with Brand team); <b>Stability</b>: two short tenures + 14-month consulting gap — confirm narrative before extending an offer.</p>
+
+  <!-- ===== 2 人选画像 · 简历导读（中立铺开：先看背景路径，再看人岗匹配） ===== -->
+  
+  <section data-mod="profile">
+    <div class="sec"><span class="no">PROFILE</span><h2>Candidate profile · resume walkthrough</h2><span class="hint">Neutral, not cherry-picked</span></div>
+    <div class="profile">
+      <div class="prof-block">
+        <h3 class="prof-h">Career path</h3>
+        <div class="timeline">
+          <div class="tl-row"><span class="tl-time editable">Mar 2022 – Aug 2023</span><span class="tl-org editable">PawPrints</span><span class="tl-role editable">Growth Lead · team of 7</span><span class="tl-out editable">Monthly rev $0 → $2.4M · blended CAC $41 · 18 months</span></div>
+          <div class="tl-row"><span class="tl-time editable">Jul 2019 – Feb 2022</span><span class="tl-org editable">LearnSphere EdTech</span><span class="tl-role editable">Growth Manager → Lead (promoted 2020, team of 4)</span><span class="tl-out editable">New users 320K · CAC $39→$26 · 2.5 yrs</span></div>
+          <div class="tl-row"><span class="tl-time editable">Jul 2016 – Jun 2019</span><span class="tl-org editable">FreshCart Marketplace</span><span class="tl-role editable">Senior Growth Ops Specialist</span><span class="tl-out editable">Analytics + A/B testing · 3 yrs</span></div>
+          <div class="tl-row gap-row"><span class="tl-time editable">Sep 2023 – Present</span><span class="tl-org editable">Gap</span><span class="tl-role editable">Independent Growth Advisor</span><span class="tl-out editable">3 DTC engagements · 14 months</span></div>
+        </div>
       </div>
-      <div class="match-dim">
-        <span class="md ok">Years of experience · Met</span>
-        <span class="md ok">Outcome ownership · Met</span>
-        <span class="md ok">CAC control · Met</span>
-        <span class="md ok">P&amp;L ownership (CAC/LTV payback) · Met</span>
-        <span class="md ok">Data stack (SQL, Looker) · Met</span>
-        <span class="md ok">Team building · Met</span>
-        <span class="md ok">DTC business model · Met</span>
-        <span class="md part">Paid budget scope · Partial</span>
-        <span class="md part">Brand partnership · Partial</span>
-        <span class="md gap">Sustainable category · Gap</span>
-        <span class="md gap">Shopify Plus (preferred) · Gap</span>
-        <span class="md gap">Creator / influencer (preferred) · Gap</span>
+      <div class="prof-block">
+        <h3 class="prof-h">Capability matrix</h3>
+        <div class="cap-grid">
+          <div class="cap-col ok">
+            <div class="cap-t">Proven</div>
+            <ul>
+              <li class="editable">Built two small teams and retained them</li>
+              <li class="editable">Scaled acquisition while holding CAC flat (3 cases)</li>
+              <li class="editable">Owned budget and P&amp;L at two companies</li>
+            </ul>
+          </div>
+          <div class="cap-col part">
+            <div class="cap-t">Claimed, needs proof</div>
+            <ul>
+              <li class="editable">SaaS experience (resume shows DTC only)</li>
+              <li class="editable">Referral program impact vs. paid channels</li>
+            </ul>
+          </div>
+          <div class="cap-col gap">
+            <div class="cap-t">Missing</div>
+            <ul>
+              <li class="editable">Team of 8+ (role asks 5–8, candidate maxed at 7)</li>
+              <li class="editable">14-month gap — must verify</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="core">
-        <h3 class="editable">Core strengths</h3>
-        <ul>
-          <li class="editable"><b>Scaled while holding CAC flat</b> — not just bought traffic. The $41 target at PawPrints is the exact pattern Northwind needs on its $2.4M budget.</li>
-          <li class="editable"><b>Team with retention</b> — one departure in 18 months; describes the specific hire/exit pattern.</li>
-          <li class="editable"><b>Klaviyo + referral built from zero</b> — hit 18% of new users at $19 CAC, lower than any paid channel.</li>
-          <li class="editable"><b>Board-ready reporting</b> — at PawPrints she led monthly unit-economics reviews; at LearnSphere she owned the weekly funnel dashboards in Looker.</li>
-        </ul>
+      <div class="prof-block">
+        <h3 class="prof-h">Number anchors</h3>
+        <p class="num-anchor editable">Rev $2.4M/mo · New users 320K · CAC $26 (EdTech) / $41 (PawPrints) · Referral 18% of users · <b>Team max 7</b> · <b>Gap 14 months</b></p>
       </div>
     </div>
   </section>
 
-  <!-- ===== 3 checkpoints ===== -->
+
+  <!-- ===== 3 匹配度诊断（结论，基于画像逐维对照） ===== -->
+  
+  <section data-mod="match">
+    <div class="sec"><span class="no">MATCH</span><h2>Fit assessment</h2><span class="hint">Dimension by dimension</span></div>
+    <div class="match">
+      <div class="match-top">
+        <div class="match-badge mid editable">Medium-High</div>
+        <p class="match-summary editable">Checks: <b>growth playbook from 0→1, held CAC flat while scaling, owned budget, built small teams</b>. Risks: <b>14-month gap, largest team 7 vs. role 5–8, no SaaS background</b>. Core responsibility "own team of 5–8" partially met — candidate has built 4 and 7 person teams but we need to verify authority.</p>
+      </div>
+      <div class="match-dim">
+        <span class="md ok">Growth playbook · Pass</span>
+        <span class="md ok">Scaling while holding CAC · Pass</span>
+        <span class="md ok">Budget &amp; P&amp;L ownership · Pass</span>
+        <span class="md ok">SQL + BI tool · Pass</span>
+        <span class="md part">Team of 5–8 · Partial (max 7)</span>
+        <span class="md gap">SaaS background · Not shown (DTC only)</span>
+        <span class="md gap">Resume continuity · Gap 14 months</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 3 待考察点 ===== -->
+  
   <section data-mod="checkpoints">
-    <div class="sec"><span class="no">CHECKPOINTS</span><h2>What to Verify</h2><span class="hint">Signals to check, and how</span></div>
+    <div class="sec"><span class="no">CHECKPOINTS</span><h2>What to verify</h2><span class="hint">Red / Amber / Blue · How to probe</span></div>
     <div class="card">
       <ul>
-        <li class="editable"><span class="tag red" title="Remove in edit mode">Red line</span><b>14-month consulting gap</b> — confirm the engagements (names, deliverables) but do not probe into personal circumstances; facts only.</li>
-        <li class="editable"><span class="tag orange" title="Remove in edit mode">Core</span><b>Two short tenures</b> (18 mo PawPrints, 2.5 yr LearnSphere) — exit logic and whether the decision pattern repeats across companies.</li>
-        <li class="editable"><span class="tag orange" title="Remove in edit mode">Core</span><b>"Blended CAC held at $41" attribution</b> — what was included, which channels pulled it down from the $45 target, and how it trended in months 10–18.</li>
-        <li class="editable"><span class="tag orange" title="Remove in edit mode">Core</span><b>Team of 7 — only 1 departure</b> — was that *before* or *after* the founder changed strategy? Was anyone let go or did they leave voluntarily?</li>
-        <li class="editable"><span class="tag orange" title="Remove in edit mode">Core</span><b>P&amp;L ownership — CAC/LTV payback models</b> — the JD explicitly requires this. Alex has Looker dashboards, but did she *own* the unit-economics decision or just run reports? Probe with Q1 follow-up and HR3.</li>
-        <li class="editable"><span class="tag orange" title="Remove in edit mode">Core</span><b>Brand + influencer partnership depth</b> — JD says "partner with Product *and* Brand on content and influencer". Resume mentions TikTok Ads but not a dedicated Brand partnership or creator collab. Q5 and Q7 will anchor this.</li>
-        <li class="editable"><span class="tag blue" title="Remove in edit mode">General</span><b>Board reporting readiness</b> — Northwind is Series B and expects monthly board reports on funnel health and unit economics. Alex has leadership-level reporting experience (Looker dashboards), but we need to confirm she can compress into a 10-slide board update vs. a 2-hour team deep-dive.</li>
-        <li class="editable"><span class="tag blue" title="Remove in edit mode">General</span><b>Budget range</b> — Northwind's $2.4M annual is ~1.2× her largest blended budget. Does that scale change how she would allocate?</li>
-        <li class="editable"><span class="tag blue" title="Remove in edit mode">General</span><b>Sustainable-home-goods transfer</b> — consumer mindset (pet vs. home) and purchase frequency are different; ask how she would learn the category in the first 60 days.</li>
+        <li class="editable"><span class="tag orange">Amber</span><b>Real management authority</b>. Trigger: "coordinate resources" described as "leading a team", can't spell out who has hiring/firing authority or budget approval. Probe: start with org chart + headcount, then one hire story and one exit story.</li>
+        <li class="editable"><span class="tag orange">Amber</span><b>Referral program impact vs. paid</b>. Trigger: only revenue numbers, can't split CAC by channel. Probe: ask for channel mix at PawPrints — referral 18% of users, what was the LTV/CAC payback vs. TikTok/Meta?</li>
+        <li class="editable"><span class="tag red">Red</span><b>14-month gap</b>. Trigger: "just taking some time" with no specifics. Probe: walk through month by month, ask what the 3 advisory engagements actually involved; check for any ongoing business with prior employers (non-compete risk).</li>
+        <li class="editable"><span class="tag blue">Blue</span><b>Context on career shift</b>. Trigger: hard to articulate why EdTech → DTC pet brand → gap. Probe: ask what specifically he learned at each and how it prepared him for this role.</li>
       </ul>
     </div>
   </section>
 
-  <!-- ===== 4 business interview ===== -->
+
+  <!-- ===== 4 业务面问题清单（教学卡） ===== -->
+  
   <section data-mod="biz">
-    <div class="sec"><span class="no">BIZ</span><h2>Business Interview Guide</h2><span class="hint">Teaching cards · Tailored to Alex Johnson · 30 min</span></div>
+    <div class="sec"><span class="no">BIZ</span><h2>Interview guide · Business round</h2><span class="hint">Teaching cards · Facts first · 30 min</span></div>
     <div id="biz-list">
-
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q1</span><span class="qc-dim editable">Primary: CAC control at scale · Secondary: P&amp;L ownership, metric integrity, budget ownership</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">At PawPrints you held blended CAC flat at $41 — below your initial $45 target — while scaling from $0 to $2.4M monthly revenue. Break down the $41: what's in it, which specific channel or action drove it down from $45, and how did CAC trend in months 10–18 when you were at scale? And while you're at it — how did you track payback period and LTV alongside that CAC number?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Calibrate]</span>Does the $41 include referral costs (Klaviyo spend, referral reward outlay) or media spend only?</p>
-            <p class="editable"><span class="skill-tag">[Time-series check]</span>Did CAC stay below $41 *every month* through month 18, or did it rise after month 12?</p>
-            <p class="editable"><span class="skill-tag">[Stress-test]</span>If Northwind gave you a 20% budget cut, which channels would you protect and which would you reallocate?</p>
-            <p class="editable"><span class="skill-tag">[Counterexample]</span>Did any channel *not* make it past your 90-day test? What killed it?</p>
-            <p class="editable"><span class="skill-tag">[P&amp;L check]</span>You held CAC flat — did you ever have a channel where CAC looked good but payback stretched beyond 12 months? What did you do?</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Anchored to two explicit JD requirements: "scale while holding CAC stable" *and* "comfortable owning P&amp;L — worked with CAC/LTV payback models". Asking for composition and trend distinguishes a trend from a one-month anomaly; the P&amp;L check probes whether she owned unit-economics decisions or just ran CAC dashboards.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q1</span><span class="qc-type f editable">F Fact-finding</span><span class="qc-dim editable">Focus: Management span and authority (3-step management probe, step 1-2)</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">At PawPrints you led a team of 7, and at LearnSphere you were promoted to Lead with 4 direct reports. Can you walk me through the org structure in each role — who reported to you, what positions, and what authority you had on hiring, firing, and budget?</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[Scope check]</span>At PawPrints you note you hired 5 of the 7 — did you interview everyone or did HR do first-pass? Who made the final call?</p>
+            <p class="editable"><span class="skill-tag">[STAR probe]</span>Can you walk me through one hire you made: what role, how long it took, and what made you decide on this person?</p>
+            <p class="editable"><span class="skill-tag">[Failure probe]</span>Any team members who didn't work out? Can you tell me about the most difficult exit you handled?</p>
+            <p class="editable"><span class="skill-tag">[Follow-up]</span>Do you do performance reviews directly? Walk me through the last one you did.</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Resume says 'team of 7' but we need to know what that actually meant — did you have hiring authority, who held the decision, or was it more matrix management? We'll triangulate the same numbers with HR later. If no hiring authority and fewer than 5 direct reports, the 'own team of 5–8' requirement is a hard gap.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Cites three channels and their individual CACs vs. blended</li><li class="editable">Names a specific action (e.g., "TikTok creative refresh" or "referral K-factor tuning") that moved the number</li><li class="editable">Describes month 10–18 trend honestly — not flat-line, with context</li><li class="editable">Mentions cost rebound or saturation, even if CAC held</li><li class="editable">Has a concrete payback-period threshold she operated against (e.g., 8 months)</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">Totals only, no channel composition</li><li class="editable">Blames "more efficient spend" — no specific lever</li><li class="editable">Claims CAC was flat every month at scale (unrealistic)</li><li class="editable">Cannot say what was included in the number</li><li class="editable">Does not know or cannot talk about payback period — only CAC</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Can clearly distinguish direct vs. indirect reports vs. dotted lines</li>
+              <li class="editable">Had real hiring authority (interview + final say or strong veto)</li>
+              <li class="editable">Has one solid hire story + one exit story with specific details</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">Describes coordinating as 'leading' — no direct reports</li>
+              <li class="editable">Can't name who reported to him in PawPrints</li>
+              <li class="editable">Says HR handled all hiring/firing decisions</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q2</span><span class="qc-dim editable">Primary: referral mechanics &amp; cost structure</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">You designed the PawPrints referral program (Klaviyo + Shopify flow) that hit 18% of new users at $19 CAC. Walk me through the mechanics — what was the reward, what was the K-factor, and how did CAC compare between referral and paid channels?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Calibrate]</span>Was the 18% signups or activations? What was 7-day retention on referral vs. paid users?</p>
-            <p class="editable"><span class="skill-tag">[Time-series check]</span>When did the program peak and why — did you tweak the reward to get there?</p>
-            <p class="editable"><span class="skill-tag">[Hypothetical]</span>Northwind has no referral program yet. Walk through your first 30 days building one here.</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Referral program claims are the most inflated on growth resumes. Asking for K-factor, retention, and reward structure separates people who ran campaigns from people who *built systems*. The hypothetical anchors the transfer to Northwind immediately.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q2</span><span class="qc-type f editable">F Fact-finding</span><span class="qc-dim editable">Focus: Anchor numbers and channel breakdown</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">Let me anchor a few numbers from your resume. At PawPrints: monthly revenue hit $2.4M, blended CAC held at $41, referral was 18% of users. Can you break down the revenue mix by channel and product category? And at what point in the 14 months did referral cross 18%?</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[Precision check]</span>Is that $2.4M GMV or net revenue? Did it include Shopify discounts or refunds?</p>
+            <p class="editable"><span class="skill-tag">[Timeline probe]</span>When did referral become profitable? Walk me through the program launch — we're also on Klaviyo + Shopify Plus.</p>
+            <p class="editable"><span class="skill-tag">[Channel mix]</span>What was the channel breakdown at the peak: TikTok vs. Meta vs. referral vs. organic search?</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Numbers from the resume are the anchor for every question that follows — revenue timing, CAC components, channel economics. If he can't break down channel mix or GMV vs net, we'll know we need to ground every follow-up from first principles.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Names the reward (e.g., "$10 off for both referrer and referee")</li><li class="editable">Recalls a realistic K-factor or share rate</li><li class="editable">Connects referral CAC to retention — referral users had lower churn</li><li class="editable">Explains why the program was or wasn't scaled further</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">"Ran a referral program" — no mechanics</li><li class="editable">Only "it was 18%" — no K-factor, no retention, no reward</li><li class="editable">Equates referral users with higher revenue without retention data</li><li class="editable">Hypothetical answer is vague ("we'd start with simple rewards")</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Can split revenue by channel and product category</li>
+              <li class="editable">Knows exactly when referral crossed 18% (month) and why</li>
+              <li class="editable">Can define his CAC formula clearly (does it include SG&amp;A?)</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">Only repeats the headline numbers verbatim</li>
+              <li class="editable">Can't say whether $2.4M is GMV or net</li>
+              <li class="editable">Referral program described as 'we launched it' — no economics</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q3</span><span class="qc-dim editable">Primary: zero-to-one revenue ramp &amp; channel priority</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">PawPrints went from $0 to $2.4M monthly in 14 months. What did month one *actually* look like — GMV, new users, channels — and which channels did you decide *not* to invest in before month three?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Calibrate]</span>Is $2.4M GMV or net revenue? Does it include shipping or refunds?</p>
-            <p class="editable"><span class="skill-tag">[Time-series check]</span>How did revenue compound — what month was the inflection point?</p>
-            <p class="editable"><span class="skill-tag">[Counterexample]</span>Did you shut down a channel or tactic in month 4–6? What went wrong?</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">"0 to $2.4M" hides the shape — it could be linear, or it could be a one-time flash sale. Asking for month-one details forces the narrative: what was actually happening early, and which channels were intentionally deprioritized vs. just not-yet-running.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q3</span><span class="qc-type s editable">S Success factor</span><span class="qc-dim editable">Focus: Growth from 0 to $2.4M (success factor A)</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">You grew PawPrints from $0 to $2.4M monthly in 14 months. Can you walk me through month 1 — what did that look like, what was revenue, and which 2-3 levers moved the needle the fastest?</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[Highlight dig]</span>What was month 1 revenue? Was it pre-launch or did you already have a list?</p>
+            <p class="editable"><span class="skill-tag">[Funnel probe]</span>Where did you hit the biggest stall? What specific change got you past it?</p>
+            <p class="editable"><span class="skill-tag">[Anti-replacement]</span>If a senior growth lead with pet brand experience had come in instead of you, would they have gotten to $2.4M too? What was unique about your approach?</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Anchors the channel mix from Q2. Tests whether he owns the playbook or was carried by product-market fit. The biggest stall question forces a specific decision and trade-off.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Month-one numbers are specific — not "very low"</li><li class="editable">Names 2–3 channels tested early, 1–2 intentionally held off</li><li class="editable">Inflection point tied to a specific decision (e.g., TikTok creative refresh, Shopify CRO)</li><li class="editable">Admits early mistakes openly</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">Totals only, no month-one detail</li><li class="editable">Everything was "planned" — no early experiments or failures</li><li class="editable">Cannot name a channel he actively deprioritized</li><li class="editable">Numbers shift under follow-up probing</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Has a clear month 1 story — pre-launch, email list, or brand co-funding</li>
+              <li class="editable">Can name 2-3 specific levers with month-over-month impact</li>
+              <li class="editable">Can articulate one thing he did that someone else might not have</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">'We did a lot of things' — no specific levers</li>
+              <li class="editable">All credit to the product and founders</li>
+              <li class="editable">Can't point to a single decision he'd claim ownership of</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q4</span><span class="qc-dim editable">Primary: team building &amp; retention · Secondary: decision patterns, board reporting readiness</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">You built 5 of the 7-person growth team at PawPrints, and only one person left in 18 months. Walk me through that one departure — when, why, and what you would do differently if you were hiring that role today. Have you ever let someone go? And — did you present monthly reports to leadership or board, and what format worked best?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Time-series check]</span>What were the hire dates? Did anyone join after the founder changed strategy?</p>
-            <p class="editable"><span class="skill-tag">[Specifics]</span>For the person who left — was it voluntary or did they resign? Did you try to retain them?</p>
-            <p class="editable"><span class="skill-tag">[Hypothetical]</span>If Northwind gave you a $50K signing-budget, what two hires would you prioritize?</p>
-            <p class="editable"><span class="skill-tag">[Board check]</span>Northwind expects monthly board reports on funnel health — what's your experience presenting unit economics to executives vs. running team-level dashboards?</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">"One departure in 18 months" is a great number but can be misleading — it might mean the team was dissolved by the founder before anyone could leave. The question asks for specifics on that one departure, probes whether he has actually made firing decisions (senior managers must), and anchors the JD's board-reporting requirement. Northwind is Series B — we need to confirm he can compress complex funnel data into a 10-slide board update, not just run 2-hour team deep-dives.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q4</span><span class="qc-type s editable">S Success factor</span><span class="qc-dim editable">Focus: Holding CAC flat while scaling (success factor A)</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">This is a big one for us — we don't just buy users, we scale while holding CAC steady. You mention blended CAC held at $41 target. What exactly did you change when TikTok was eating into Meta budget? Walk me through one specific budget reallocation.</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[Specific probe]</span>What metric told you to shift budget — was it ROAS, payback, or blended CAC trend?</p>
+            <p class="editable"><span class="skill-tag">[Trade-off probe]</span>If the new channel performs better on blended CAC but worse on LTV, what do you do?</p>
+            <p class="editable"><span class="skill-tag">[Cross-over]</span>Did you apply the same channel-shifting approach at LearnSphere where you went from $39 to $26?</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Anchors the CAC formula from Q2. 'Holding CAC flat while scaling' is the #1 success factor for this role — we need to know he has the decision-making playbook, not just good results.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Clear hire dates; describes the team at month 6 vs. month 18</li><li class="editable">Tells the departure story specifically — no vagueness</li><li class="editable">Has made a firing decision and describes it without trauma</li><li class="editable">Hiring priorities tie back to Northwind's JD (Shopify Plus, SMS, creator)</li><li class="editable">Has board/exec-level reporting experience — can distinguish board updates from team dashboards</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">Hires were "the founder's team" — he didn't actually choose</li><li class="editable">Every departure described as "voluntary and for family reasons" (four in a row, impossible)</li><li class="editable">Never fired anyone at 7 years of growth experience</li><li class="editable">Hiring priorities are generic ("a strong paid marketer")</li><li class="editable">All reporting is team-level — no board or exec experience</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Can describe the budget shift with specific triggers and metrics</li>
+              <li class="editable">Makes trade-off decisions based on payback, not just ROAS</li>
+              <li class="editable">Consistently applies the same decision framework across both roles</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">'We shifted because TikTok was hot'</li>
+              <li class="editable">All budget moves based on gut or founder preference</li>
+              <li class="editable">Can't name a single data point that drove a reallocation</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q5</span><span class="qc-dim editable">Primary: cross-functional influence &amp; Brand partnership · Secondary: driver vs. passenger</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">You partnered with Product on site optimization at PawPrints — what was the hardest thing to get done? And you mentioned TikTok Ads — what about influencer partnerships? Have you worked with a Brand team on creator campaigns, and how did you split ownership between paid and creator-driven acquisition?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Specifics]</span>What exactly was blocked? (Homepage CTA change? Checkout form? Retention email?)</p>
-            <p class="editable"><span class="skill-tag">[Timeline check]</span>How many revisions before they said yes? Did you go to the founder?</p>
-            <p class="editable"><span class="skill-tag">[STAR probe]</span>If Product *had* permanently refused, what was your fallback plan?</p>
-            <p class="editable"><span class="skill-tag">[Brand influencer]</span>Northwind's Brand team runs a creator pipeline — have you partnered on any influencer campaigns that moved the needle? What attribution model did you use for creator-driven signups?</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Growth teams can be passengers (get handed a Product roadmap and execute) or drivers (write the roadmap). Northwind's JD explicitly requires partnering with *both* Product *and* Brand on content/influencer. Alex's resume mentions TikTok Ads but not dedicated Brand partnership — this question separates product-only influence from the cross-functional ownership Northwind needs, and anchors the creator/influencer preferred requirement.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q5</span><span class="qc-type s editable">S Success factor</span><span class="qc-dim editable">Focus: Building teams (success factor C)</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">You built 5 of the 7 people at PawPrints and promoted to Lead at LearnSphere. Can you describe what you looked for when hiring, and whether there was one hire that surprised you most — either positively or negatively?</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[STAR probe]</span>What was the hardest hire? How long did it take, and why did it take that long?</p>
+            <p class="editable"><span class="skill-tag">[Failure probe]</span>Any hire that didn't work out — what went wrong, and what did you change?</p>
+            <p class="editable"><span class="skill-tag">[Retention probe]</span>PawPrints had only one departure in 18 months — why do you think retention was so strong?</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Anchors the authority confirmed in Q1. The hardest-hire and failure-hire questions force reflection and show whether he's learning. The retention angle connects back to role success — we want someone who can build and keep a team.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Names a specific blocked item, not vague "site optimization"</li><li class="editable">Describes the negotiation — what he traded, not just "escalated"</li><li class="editable">Has a documented fallback (ran an experiment outside the main site, used a Lander)</li><li class="editable">Leaves a durable mechanism behind (weekly growth/Product sync, prioritization doc)</li><li class="editable">Has partnered with Brand on creator campaigns; can speak to attribution (first-touch vs. multi-touch)</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">No hardest thing — "Product was great to work with"</li><li class="editable">Only escalated to the founder — no negotiation</li><li class="editable">Fallback plan was to wait</li><li class="editable">Cannot name a specific mechanism he put in place</li><li class="editable">Creator experience is just "TikTok Ads" — no dedicated Brand partnership or influencer campaigns</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Has a hard-hire story with duration and barriers</li>
+              <li class="editable">Has at least one failure story with what he changed</li>
+              <li class="editable">Has a thoughtful answer on retention (culture? autonomy? equity?)</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">'We hired great people' — no specifics</li>
+              <li class="editable">Only success stories, no failures</li>
+              <li class="editable">Retention described as 'company culture' with no personal contribution</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q6</span><span class="qc-dim editable">Primary: transfer &amp; judgment · Secondary: trade-offs under constraint, Brand ownership</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">You inherit Northwind's growth line: $52M DTC revenue, Shopify Pro (not Plus), 3.4% blended CAC, Brand team runs a creator pipeline generating 8% of monthly traffic with no dedicated growth ownership, 4 people currently on the team (1 paid, 1 lifecycle, 1 content, 1 ops), and a $200K monthly paid budget. Your first 60 days — what do you do, and where do you set your first measurable target? Where would you cut budget if you were overspending, and who should own that Brand creator pipeline with you?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Calibrate]</span>Northwind says blended CAC is 3.4% — is that CAC/revenue or CAC/MAU?</p>
-            <p class="editable"><span class="skill-tag">[Scenario]</span>If after 60 days your test shows CAC can't come down without sacrificing volume, what's your diagnosis?</p>
-            <p class="editable"><span class="skill-tag">[Hypothetical]</span>With a $2.4M annual budget (up from what you managed at PawPrints), which two channels would you scale first — and which would you hold flat?</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Five scenario parameters ($52M revenue, Shopify Pro, 3.4% CAC, Brand creator pipeline, 4-person team) force specificity. The creator pipeline question probes whether she would actively claim ownership (driver) or let Brand continue running it (passenger). We want to see whether she diagnoses before acting, whether she can run experiments under constraint, and whether her DTC pet-brand playbook transfers to sustainable home goods.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q6</span><span class="qc-type c editable">C Scenario</span><span class="qc-dim editable">Focus: P&amp;L ownership (success factor B)</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">Northwind has a $2.4M annual paid budget, blended CAC target ~$38, and we're growing post-Series B. If you join and after 90 days our blended CAC is sitting at $46 — 21% over target — what would you do? Walk me through the decision.</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[Scenario simulation]</span>If fixing CAC means cutting TikTok 50% and referral flatlines for 3 months, do you pull the trigger?</p>
+            <p class="editable"><span class="skill-tag">[Constraint add]</span>Founders are obsessed with TikTok ROAS which is 2.1x, even though blended CAC is high. How do you present the trade-off?</p>
+            <p class="editable"><span class="skill-tag">[SMART probe]</span>At 90 days, what single number tells you you're on track?</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Anchors the budget shift playbook from Q4 and revenue model from Q2. 'What would you cut?' forces prioritization; 'how do you present to founders?' tests stakeholder management which is critical at Series B.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Diagnoses the funnel first — audits current data before proposing moves</li><li class="editable">First 60-day target is specific (e.g., "20% lower CAC on SMS channel, measurable by day 55")</li><li class="editable">Names which channels to scale vs. hold flat — tied to the $2.4M budget size</li><li class="editable">Cutting-budget answer prioritizes retention over acquisition</li><li class="editable">Proposes a split for the Brand creator pipeline (e.g., "Growth owns attribution + creative testing, Brand owns influencer relationships")</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">Launches four tactics immediately with no audit</li><li class="editable">Target is a verb, not a number ("optimize CAC")</li><li class="editable">Blindly scales TikTok because that's what worked at PawPrints</li><li class="editable">Cutting budget means "shut down the lowest ROAS channel" — no nuance</li><li class="editable">Defers the creator pipeline to Brand — "that's their job"</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Would name the specific channels to cut with numbers</li>
+              <li class="editable">Can articulate the founder-facing narrative (trade-off + timeline + upside)</li>
+              <li class="editable">Has a measurable 90-day milestone, not a feeling</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">'I'd fix CAC and get revenue back' — no trade-offs described</li>
+              <li class="editable">Would push back to founders without a plan</li>
+              <li class="editable">Milestone is a feeling, not a number</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q7</span><span class="qc-dim editable">Primary: category &amp; platform transfer (JD gaps)</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">You've worked on Shopify Pro but not Plus, and your category is pet rather than sustainable home goods. If hired, what's your learning plan for both — and what do you think will surprise you most about the home-goods customer? And while you're at it — how would you go about claiming ownership of that Brand creator pipeline without stepping on anyone's toes?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Scenario]</span>Which Shopify Plus feature do you think matters most for Northwind, given our brand and budget?</p>
-            <p class="editable"><span class="skill-tag">[Reframe]</span>What assumptions from PawPrints are you *not* planning to carry over to Northwind?</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Gap questions never ask "have you used Shopify Plus" or "have you sold home goods" — that only invites bluffing. Asking for a learning plan reveals whether she has concrete steps, whether she knows her own blind spots, and whether she's already thought about which PawPrints tactics *won't* transfer. The creator-pipeline ownership question tests political savvy — Northwind has a Brand team running it; we need someone who can collaborate without turf wars.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q7</span><span class="qc-type c editable">C Scenario</span><span class="qc-dim editable">Focus: Cross-functional prioritization</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">You mentioned partnering with product on onboarding and checkout, and with brand on content. Let's say we launch a new product line and all three — product, brand, and you — need the same data-science resource at the same time. Who gets it first, and how do you decide?</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[Scenario simulation]</span>If brand has a launch deadline in 2 weeks and your growth team has A/B tests stuck waiting for data, what happens?</p>
+            <p class="editable"><span class="skill-tag">[Anti-dependency]</span>How do you prevent yourself from being the bottleneck that every team waits for?</p>
+            <p class="editable"><span class="skill-tag">[Process probe]</span>Do you have a weekly rhythm with product and brand teams, or is it ad-hoc?</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Anchors his stakeholder approach from Q6. Senior growth at Series B means managing politics, not just growth metrics. Tests whether he has process or relies on personal rapport.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Admits gaps honestly — no bluffing on Shopify Plus or home goods</li><li class="editable">Names specific learning steps (Shopify Plus docs, talking to a Plus store manager, reviewing Northwind's first-party data)</li><li class="editable">Identifies concrete *non-transferable* PawPrints assumptions</li><li class="editable">Knows the difference between pet (impulse, repeat-purchase) and home goods (deliberate, lower frequency)</li><li class="editable">Proposes a collaborative ownership model for the creator pipeline — not "I'll take it over"</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">Claims "Shopify Pro and Plus are basically the same"</li><li class="editable">Only "I'll read the documentation" for learning plan</li><li class="editable">Cannot name a single PawPrints tactic that wouldn't transfer</li><li class="editable">Home-goods customer described the same as pet owner</li><li class="editable">Takes a turf-war approach to the creator pipeline</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Has a prioritization framework (impact × urgency × owner)</li>
+              <li class="editable">Has or wants a weekly rhythm with product and brand</li>
+              <li class="editable">Can explain how he de-risks being the bottleneck</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">'I'd work it out with the data lead' — no framework</li>
+              <li class="editable">Relationships are everything, no process</li>
+              <li class="editable">Nothing is predictable, it's all hero work</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q8</span><span class="qc-dim editable">Primary: timeline continuity &amp; consulting gap (neutral frame)</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">I'd like to confirm your timeline — the consulting engagements from September 2023 to now. Which brands did you work with, and what did you actually deliver for each one?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Timeline check]</span>How did you get engaged with each brand — warm intro, cold outbound?</p>
-            <p class="editable"><span class="skill-tag">[STAR probe]</span>You mentioned a sustainable beauty brand hit $300K monthly — what was the referral program you set up there, and how does it compare to PawPrints?</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">A 14-month gap listed as "consulting" is relatively common on US resumes (layoffs, career pivots), but we need to verify there's actual deliverable work — not just "networking". Asking for three brands with specific outputs and a deliverable comparison frames this as a capability check, not a personal question.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q8</span><span class="qc-type r editable">R Risk / Gap</span><span class="qc-dim editable">Focus: The 14-month gap</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">The gap from Sep 2023 to present — you describe it as independent growth advising with three DTC clients. Can you walk me through month by month what this looked like, what you charged, what outcomes you delivered, and what led you back to full-time?</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[Timeline check]</span>Was there any overlap with PawPrints (non-compete)? Who were the three clients, what's their approximate revenue today?</p>
+            <p class="editable"><span class="skill-tag">[Scope check]</span>Did any of these engagements turn into ongoing retainer or equity arrangements?</p>
+            <p class="editable"><span class="skill-tag">[Tone check]</span>What was the most challenging part of being independent? Why didn't it become a full-time business for you?</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Neutral framing — gap is described as advising on the resume, not 'unemployed'. Month-by-month walk + outcomes + why not going independent full-time will surface whether this was a real chapter or a euphemism for being unable to find a role.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Names three specific brands — not vague "startups"</li><li class="editable">Describes deliverables concretely (referral program setup, paid media audit with recommendations)</li><li class="editable">Referral program comparison ties back to his PawPrints work — transfer in action</li><li class="editable">No defensiveness; conversational about the gap period</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">Only "a few brands" — no names</li><li class="editable">Deliverables vague ("advised them on growth")</li><li class="editable">Cannot name a single deliverable number or outcome</li><li class="editable">Visibly defensive or emotional</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Month-by-month walk is consistent with three real engagements</li>
+              <li class="editable">Can name clients and specific outcomes with revenue today</li>
+              <li class="editable">Has a thoughtful reason for seeking full-time vs. continuing consulting</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">Timeline is vague or shifts when asked to specify</li>
+              <li class="editable">Clients described as generic ('some DTC brands')</li>
+              <li class="editable">Can't explain why he's seeking full-time</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
-        <button class="del-btn" type="button" onclick="delCard(this)">Remove</button>
-        <div class="qc-head"><span class="qc-num">Q9</span><span class="qc-dim editable">Primary: exit attribution &amp; decision stability</span></div>
-        <div class="qc-main"><span class="qc-label">Question</span><p class="qc-question editable">You left PawPrints after 18 months and LearnSphere after 2.5 years. What happened? And — realistically — if you saw similar signals at Northwind, how would you decide when to leave vs. stay and fix it?</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">Follow-ups</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[Time-series check]</span>How many team members left around your departure — structural or personal?</p>
-            <p class="editable"><span class="skill-tag">[Hypothetical]</span>What are the top two signals you'd look for at Northwind that would make you start planning an exit?</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Two short tenures in a row are the top stability risk. "Why did you leave" invites polished answers; adding "how would you decide next time" forces him to articulate his decision criteria — revealing whether the pattern is intentional or impulsive. Northwind is a Series B and expects 2–3 year tenure; we're testing whether he can stay through a strategy shift.</p></div>
+        <button class="del-btn" type="button" onclick="delCard(this)">Delete</button>
+        <div class="qc-head"><span class="qc-num">Q9</span><span class="qc-type m editable">M Motivation</span><span class="qc-dim editable">Focus: Motivation and mutual fit (closing)</span></div>
+        <div class="qc-main"><span class="qc-label">Main question</span><p class="qc-question editable">You've worked in EdTech, DTC pet, and now consulting — what's the throughline in your choices? Why Northwind specifically — Series B sustainable home goods, remote, reports to Head of Marketing? And where do you want to be in three years?</p></div>
+        <div class="qc-follow"><span class="qc-label">Follow path</span><div>            <p class="editable"><span class="skill-tag">[Highlight dig]</span>What's the single thing you're proudest of in your career? Why didn't you stay and grow that?</p>
+            <p class="editable"><span class="skill-tag">[Anti-replacement]</span>If we offered you $40K more base to do the same job, would that move you — or are you picking this for something else?</p>
+            <p class="editable"><span class="skill-tag">[Constraint add]</span>If we ask you to move from remote to Austin 3 days a week in 12 months, how does that land?</p></div></div>
+        <div class="qc-reason"><span class="qc-label">Why this works</span><p class="editable">Closing question checks motivation authenticity and sets candidate for negotiation. The $40K test distinguishes 'money matters' from 'I'm picking this for X'. Austin relocation question checks stability.</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">Strong signals</span><ul class="good"><li class="editable">Specific attribution — PawPrints founder changed model; LearnSphere merged divisions</li><li class="editable">Measured about former employers; no bitterness</li><li class="editable">Names clear decision criteria ("I'd give it 6 months after a strategy shift")</li><li class="editable">Self-aware about his tenure length — "I don't want to repeat this at Northwind"</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">Red flags</span><ul class="bad"><li class="editable">Everything external — "founder was weird", "compensation changed"</li><li class="editable">Complains about former leaders in detail</li><li class="editable">No decision criteria — "I'll stay as long as it's good"</li><li class="editable">Cannot name one thing *he* would do differently next time</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">Strong signal</span><ul class="good">              <li class="editable">Throughline is clear and connects to this role</li>
+              <li class="editable">Has specific reasons for Northwind, not generic greenwashing talk</li>
+              <li class="editable">Answers the relocation question directly with yes/no + conditions</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">Red flag</span><ul class="bad">              <li class="editable">'It just happened' — no throughline</li>
+              <li class="editable">Money is the only real driver</li>
+              <li class="editable">Relocation is vague, avoidant, or emotional</li></ul></div>
         </div>
-      </div>
-
-    </div>
-    <button class="add-btn" type="button" onclick="addCard('biz')">+ Add business question card</button>
+      </div></div>
+    <button class="add-btn" type="button" onclick="addCard('biz')">+ Add question</button>
   </section>
 
-  <!-- ===== 5 HR interview ===== -->
+
+  <!-- ===== 5 HR面问题清单 ===== -->
+  
   <section data-mod="hr">
-    <div class="sec"><span class="no">HR</span><h2>HR Interview Guide</h2><span class="hint">Mode: Structured template · 30 min</span></div>
+    <div class="sec"><span class="no">HR</span><h2>HR面问题清单</h2><span class="hint">自由题组 · 8 题 · 约 30 分钟</span></div>
     <div id="hr-list">
-
       <div class="hrsec">
-        <div class="hr-head"><span class="hn">1</span><h3 class="editable">Work Authorization &amp; Background</h3></div>
-        <div class="hr-body">
-          <ul>
-            <li class="editable">Employment eligibility: confirm US work authorization (I-9 form at hire) — do not ask about citizenship or national origin.</li>
-            <li class="editable">Timeline check: confirm start/end dates for each role (matches resume). Verify work during the Sep 2023 – present gap — facts only; do not probe into family or personal circumstances.</li>
-            <li class="editable">Education: confirm the degree and granting institution; do not ask for graduation year (can reveal age).</li>
-          </ul>
-          <span class="purpose">Purpose: align hard facts early so the business round is not wasted on verification</span>
-        </div>
+        <div class="hr-head"><span class="hn">I</span><h3 class="editable">Resume &amp; gap verification</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">Walk through the gap (Sep 2023 – present) month by month. We'll need a summary and will verify with 1-2 references from your advisory work.</li>
+            <li class="editable">Confirm dates, titles, reporting relationships, and team size at all three roles.</li>
+            <li class="editable">Education verification: we'll confirm UT Austin, B.S. in Statistics, 2016 (background check).</li></ul><span class="purpose">目的：Hard facts first. The 14-month gap is a red flag — HR handles references and docs, business round handles substantive interpretation. No overlap.</span></div>
       </div>
 
       <div class="hrsec">
-        <div class="hr-head"><span class="hn">2</span><h3 class="editable">Compensation Expectations</h3></div>
-        <div class="hr-body">
-          <ul>
-            <li class="editable">Base salary target range: "Where are you looking for base compensation?" — listen to their number, do not anchor to your band first.</li>
-            <li class="editable">Variable pay preference: "How much of your total compensation should be variable (bonus + equity) vs. base?"</li>
-            <li class="editable">**Do not ask for salary history.** Restricted in 22+ US states and many localities; EEOC guidance advises against it federally.</li>
-            <li class="editable">Equity structure: "Northwind uses a standard 4-year vesting with a 1-year cliff for the 0.15% equity refresh — have you worked with that structure before? How did you value equity in previous offers vs. base cash?"</li>
-          </ul>
-          <span class="purpose">Purpose: growth roles carry heavy variable pay; align early to avoid late-stage negotiation friction. Vesting structure (4-year / 1-year cliff) is explicit in the JD — confirm they understand it.</span>
-        </div>
+        <div class="hr-head"><span class="hn">II</span><h3 class="editable">Why each career choice</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">Why did you leave PawPrints? What was the biggest thing you learned that you weren't able to do there?</li>
+            <li class="editable">Why EdTech → DTC pet brand? Why PawPrints → consulting?</li>
+            <li class="editable">What's your criteria for picking a job — rank them.</li></ul><span class="purpose">目的：Distinguishes proactive career building from drifting. Three industry shifts tell us a lot about how he evaluates work.</span></div>
       </div>
 
       <div class="hrsec">
-        <div class="hr-head"><span class="hn">3</span><h3 class="editable">Role Alignment</h3></div>
-        <div class="hr-body">
-          <ul>
-            <li class="editable">Largest team managed, number of direct reports; ask whether they have managed cross-site or remote teams.</li>
-            <li class="editable">Shopify experience: "You've used Shopify Pro before — what has Pro not given you that you've had to work around? What would Plus unlock here?"</li>
-            <li class="editable">SMS / Klaviyo experience: "What have you done with lifecycle SMS that we should know about? Anything you tried that didn't work?"</li>
-            <li class="editable">Creator / influencer partnerships (JD preferred): "The JD mentions creator partnerships at scale — what's your experience here? TikTok Ads vs. dedicated creator collaborations — which moved the needle more for you?"</li>
-            <li class="editable">P&amp;L ownership &amp; board reporting (JD required): "Have you owned monthly unit-economics or funnel reporting for leadership? What level of detail did they want — were you presenting to a board or running team dashboards?"</li>
-            <li class="editable">Budget ownership: "What was the largest annual paid budget you've managed end-to-end — not just allocated to channels? Did you hold the CAC/LTV payback target for that budget?"</li>
-          </ul>
-          <span class="purpose">Purpose: cover JD-preferred items (Shopify Plus, SMS, creator) *and* JD-required items (P&amp;L ownership, board reporting) the business round may have skipped; confirm budget ownership scale matches our $2.4M</span>
-        </div>
+        <div class="hr-head"><span class="hn">III</span><h3 class="editable">Compensation &amp; equity expectations</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">What was your total comp at PawPrints (base + variable + equity)? And at LearnSphere?</li>
+            <li class="editable">What's your target base range for this role? Variable mix — what percentage of total do you expect to be bonus? Equity expectations?</li>
+            <li class="editable">Northwind's refresh is 0.15% target equity, discretionary based on performance. Is that aligned with what you're looking for?</li></ul><span class="purpose">目的：Sets expectations early — prevents offer-night sticker shock. Consulting background may mean different comp preferences than pure corporate.</span></div>
       </div>
 
       <div class="hrsec">
-        <div class="hr-head"><span class="hn">4</span><h3 class="editable">Career Motivation &amp; Logistics</h3></div>
-        <div class="hr-body">
-          <ul>
-            <li class="editable">Exit from PawPrints / LearnSphere (briefly — we covered this in business; HR checks narrative consistency, not depth).</li>
-            <li class="editable">Why Northwind at this stage: what attracts them to a Series B sustainable brand over a DTC scale-up?</li>
-            <li class="editable">Reporting structure: "You'd report to the Head of Marketing — is that familiar territory for you? What's the largest org you've reported into?"</li>
-            <li class="editable">Work arrangement: remote-first with Austin hybrid option — "What's your preferred setup? Are you open to 1–2 days/week in Austin, or fully remote?" (no family, caregiving, or personal questions).</li>
-            <li class="editable">Notice period and earliest start date; expected travel (we do quarterly team offsites).</li>
-            <li class="editable">Candidate questions: three things they most want to confirm about Northwind.</li>
-          </ul>
-          <span class="purpose">Purpose: stability is the top risk with two short tenures; probe motivation through a neutral frame, not an interrogation. Reporting line (Head of Marketing) is explicit in the JD — confirm familiarity.</span>
-        </div>
+        <div class="hr-head"><span class="hn">IV</span><h3 class="editable">Management verification (cross-check with Q1)</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">Tell me about the largest team you've managed: direct reports, indirect, who has hiring/firing, who does performance reviews?</li>
+            <li class="editable">What's the toughest hiring decision you've made?</li>
+            <li class="editable">What's the most difficult performance issue you've had to address? How did it end?</li></ul><span class="purpose">目的：Cross-check of the management authority established in Q1. If numbers or stories diverge significantly, that's a trust signal.</span></div>
       </div>
 
-    </div>
-    <button class="add-btn" type="button" onclick="addCard('hr')">+ Add HR question card</button>
+      <div class="hrsec">
+        <div class="hr-head"><span class="hn">V</span><h3 class="editable">Background check &amp; references</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">We'll do a standard background check (employment verification, education, one reference per role). Is there anything you'd like us to know upfront?</li>
+            <li class="editable">Who would you want us to speak with from PawPrints and LearnSphere — what was your relationship?</li>
+            <li class="editable">Any non-compete agreements we should be aware of?</li></ul><span class="purpose">目的：Proactive approach = lower risk of hidden surprises later. Non-compete check matters since he has consulting clients.</span></div>
+      </div>
+
+      <div class="hrsec">
+        <div class="hr-head"><span class="hn">VI</span><h3 class="editable">EEOC &amp; protected class note</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">We'll be making this decision on the basis of experience, skills, and ability to do the job. Is there anything else you'd like us to consider that's related to your ability to perform this work?</li>
+            <li class="editable">Northwind is a remote-first team with a small Austin office. Does that work for you?</li>
+            <li class="editable">Travel expectations: quarterly team offsites, occasional customer or vendor visits. Any concerns?</li></ul><span class="purpose">目的：Standard EEOC protocol — protects us and gives candidate the floor to raise accommodation needs.</span></div>
+      </div>
+
+      <div class="hrsec">
+        <div class="hr-head"><span class="hn">VII</span><h3 class="editable">Turnaround &amp; timeline</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">Are you actively interviewing anywhere else? Where are you in that process?</li>
+            <li class="editable">If we moved forward, what's the soonest you could give notice and start?</li>
+            <li class="editable">What's on your mind right now about this role or Northwind — anything we haven't covered?</li></ul><span class="purpose">目的：Tells us our competitive landscape and how to sequence offers. 'What's on your mind' surfaces things we might not have asked about.</span></div>
+      </div>
+
+      <div class="hrsec">
+        <div class="hr-head"><span class="hn">VIII</span><h3 class="editable">Mutual close</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">Any questions for us?</li>
+            <li class="editable">Based on what you've seen today, what's one thing you'd need to know before you'd seriously consider an offer?</li>
+            <li class="editable">If you had a single sentence to convince us you're the right candidate, what would it be?</li></ul><span class="purpose">目的：Closing — signals mutual choice. The single sentence question tells us what he values most and how he frames his own value prop.</span></div>
+      </div></div>
+    <button class="add-btn" type="button" onclick="addCard('hr')">+ 添加 HR面问题卡</button>
   </section>
 
-  <!-- ===== 6 agenda ===== -->
+
+  <!-- ===== 6 时间分配表 ===== -->
+  
   <section data-mod="agenda">
-    <div class="sec"><span class="no">AGENDA</span><h2>Time Allocation &amp; Pacing</h2></div>
+    <div class="sec"><span class="no">AGENDA</span><h2>Timing &amp; rhythm</h2></div>
     <div class="tables">
       <div class="ttable" id="biz-tt">
-        <h3><span class="tt">B</span>Business interview · 30 min</h3>
-        <div class="trow"><span>Opening — walk me through the one growth story you're proudest of</span><span class="min">3 min</span></div>
-        <div class="trow"><span>Capability deep-dive (CAC + P&amp;L + scenario)</span><span class="min">15 min</span></div>
-        <div class="trow"><span>Verification &amp; risk (gap, exits, Brand partnership)</span><span class="min">7 min</span></div>
-        <div class="trow"><span>Motivation &amp; mutual close</span><span class="min">5 min</span></div>
+        <h3><span class="tt">B</span>Business round · 30 min</h3>
+        <div class="trow"><span>Facts first: management authority + number anchors (Q1-Q2)</span><span class="min">5'</span></div>
+        <div class="trow"><span>Strengths: 0→1 playbook, holding CAC flat, building teams (Q3-Q5)</span><span class="min">12'</span></div>
+        <div class="trow"><span>Scenario: P&amp;L ownership + cross-functional prioritization (Q6-Q7)</span><span class="min">6'</span></div>
+        <div class="trow"><span>Risk: 14-month gap (Q8)</span><span class="min">5'</span></div>
+        <div class="trow"><span>Motivation &amp; mutual close (Q9)</span><span class="min">2'</span></div>
       </div>
       <div class="pace">
-        <h3>Pacing notes</h3>
-        <div class="pace-row"><b>Opening</b><span class="editable">Set the 30-minute structure up front. "We have five questions today, about 30 minutes total. Let's start with the one thing you're most proud of." You want him in narrative mode, not defensiveness.</span></div>
-        <div class="pace-row"><b>Final 5 min</b><span class="editable">Be candid about Northwind's real challenges (Shopify Plus migration, sustainable-category learning curve, Brand pipeline ownership) and the ownership on offer. Leave room for his questions. State the next step and timing explicitly.</span></div>
-        <div class="pace-row"><b>Follow-up etiquette</b><span class="editable">Probe with curiosity ("Can you walk me through where you landed on that?"). After three vague rounds on one topic, change angle — do not press harder.</span></div>
+        <h3>Rhythm notes</h3>
+        <div class="pace-row"><b>Opening framing</b><span class="editable">「Let's start by grounding this in your background — I want to make sure I understand the real scope of what you owned, then we can dig into specific challenges」 — frames fact-finding as collaboration, not interrogation</span></div>
+        <div class="pace-row"><b>Facts before judgment</b><span class="editable">Q1-Q2 = write everything down, don't judge. Red flags only get raised in Q8 and in cross-check questions with HR. Avoid adversarial tone in the gap probe — it's a neutral walk-through of what he told us on the resume</span></div>
+        <div class="pace-row"><b>Closing tone</b><span class="editable">At minute 25: say one thing we love about his background, one thing we'd need to see resolved, and a clear timeline for next steps</span></div>
       </div>
     </div>
   </section>
+
 
   <!-- ===== footer ===== -->
   <footer data-mod="footer" style="margin-top:34px;padding-top:16px;padding-bottom:260px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:16px;color:var(--ink-2)">
-    <span><b>Interviewer Workbench</b> · Generated by interviewer-kit</span>
-    <span>Sample · Click to edit · Export renders at 750px</span>
-  </footer>
-  <footer style="padding:0 0 24px;font-size:13px;color:var(--ink-2);line-height:1.6">
-    <span class="editable">This guide provides general hiring-compliance notes only and does not constitute legal advice. Regulations differ across US states, EU member states, the UK, and APAC jurisdictions and change over time — review with local counsel or your compliance owner before formal use. EEOC guidance recommends against asking salary history, age, marital status, disability, or national origin.</span>
+    <span><b>面试官工作台</b> · 由 interviewer-kit 生成</span>
+    <span>可点击编辑 · 导出长图为 750px 版式</span>
   </footer>
 
 </div>
@@ -631,7 +699,7 @@
     if(kind==='biz'){
       d.innerHTML=
         '<button class="del-btn" type="button" onclick="delCard(this)">删除</button>'+
-        '<div class="qc-head"><span class="qc-num">'+num+'</span><span class="qc-dim editable">'+label+'：</span></div>'+
+        '<div class="qc-head"><span class="qc-num">'+num+'</span><span class="qc-type s editable">S 成功要素</span><span class="qc-dim editable">'+label+'：</span></div>'+
         '<div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">（填写主问题）</p></div>'+
         '<div class="qc-follow"><span class="qc-label">追问路径</span><div>'+
           '<p class="editable"><span class="skill-tag">[STAR补问]</span>（追问话术）</p>'+
@@ -700,9 +768,9 @@
     // B9: 克隆体清空 id，避免与原页面重复 id 污染 DOM（导出用 data-mod 定位，不依赖 id）
     [].slice.call(clone.querySelectorAll('[id]')).forEach(function(n){n.removeAttribute('id');});
     var keepMap={
-      all:{header:1,match:1,checkpoints:1,biz:1,hr:1,agenda:1,footer:1},
-      biz:{header:1,match:1,checkpoints:1,biz:1,agenda:1,footer:1},
-      hr:{header:1,match:1,checkpoints:1,hr:1,agenda:1,footer:1}
+      all:{header:1,profile:1,match:1,checkpoints:1,biz:1,hr:1,agenda:1,footer:1},
+      biz:{header:1,profile:1,match:1,checkpoints:1,biz:1,agenda:1,footer:1},
+      hr:{header:1,profile:1,match:1,checkpoints:1,hr:1,agenda:1,footer:1}
     };
     var keep=keepMap[scope];
     [].slice.call(clone.querySelectorAll('[data-mod]')).forEach(function(n){

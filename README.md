@@ -105,7 +105,7 @@ The interviewer follows the timing plan: open with a broad question and let the 
 | Step | Input | Output |
 |---|---|---|
 | **1. Profile · 画像采集** | JD + resume file | 结构化画像 · 3 条 success factors |
-| **2. Analyze · 分析** | 结构化画像 | 逐维匹配度 · 待考察点（带验证方式） · 一句话诊断 |
+| **2. Analyze · 分析** | 结构化画像 | Candidate profile (career path · capability matrix · number anchors) · dimension-by-dimension match · checkpoints |
 | **3. Design · 问题设计** | 分析结果 + success factors | 问题卡（业务面 7–10 张 + HR 面 3–4 段） · 节奏表 |
 | **4. Self-check · 自检** | 完整问题清单 | 十项检查清单；不达标卡片必须重做 |
 | **5. Pack · HTML 打包** | 所有前置输出 | 可编辑 HTML 文件，导出即用 |
@@ -118,9 +118,11 @@ The interviewer follows the timing plan: open with a broad question and let the 
 
 ### 方法论层
 
-- **三源制题源**：success factors 卡（4–5 张，测上限）· 情境前瞻卡（1–2 张，测未来适配）· 风险验证卡（1–2 张）。配额存在，但"为凑配额出题"被明确禁止
-- **缺口题通道**：JD 列了一个"优先项"而简历没有，问题永远是"你怎么补上这个缺口"——永远不问"你做过吗"
-- **教学卡结构**：主问题 → 主/副维度 → 设计原理 → 高分锚定 ↔ 红旗信号 → 追问路径（带 *标签 + 触发信号 + 停止条件*）
+- **Four-source question bank**：fact-finding (2–3, nail down the resume first) → success factors (3–4, test the ceiling) → forward-looking scenarios (1–2, test fit) → risk verification (1–2); motivation closes. Quotas exist, but "filling quotas" is explicitly forbidden
+- **Fact anchoring**：every capability / scenario question must anchor to a fact already established in the interview — no hypotheticals floating free of the candidate's real experience
+- **Three-step management probe**：real span of control and authority (headcount / appraisal / hiring-firing / budget) → real hire-and-exit stories → only then extrapolate to the target org; no people authority with fewer than 5 direct reports = hard gap
+- **Gap-question channel**：if the JD lists a "nice to have" the resume lacks, the question is always "how would you close this gap" — never "have you done it"
+- **Teaching-card structure**：source type (F/S/C/R/M) → main question → primary/secondary dimensions → rationale (with fact anchor) → strong answer ↔ red flags → follow-up path (tag + trigger + stopping point)
 - **中性风险框架**：空档、短任期等风险先用中性框架验证（"我想先确认一下时间线再往下聊"），不是审判式追问
 
 ### 工程层

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html  lang="zh-CN"> lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>面试问题清单</title>
+<title>李明 · 高级用户增长经理 · 面试问题清单</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='7' fill='%231E2A44'/%3E%3Ccircle cx='11' cy='16' r='3.2' fill='%23E8833A'/%3E%3Crect x='17' y='13' width='9' height='6' rx='1.6' fill='%23FFFFFF'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -36,7 +36,7 @@
   .sec .no{font-size:17px;font-weight:700;color:var(--orange);letter-spacing:.08em}
   .sec h2{font-size:26px;font-weight:800}
   .sec .hint{font-size:16px;color:var(--ink-2);margin-left:auto;text-align:right;line-height:1.5}
-  /* ===== 匹配度 + 核心优势（合并模块） ===== */
+  /* ===== 匹配度诊断（维度 + 结论） ===== */
   .match{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
   .match-top{display:flex;align-items:center;gap:16px}
   .match-badge{width:82px;height:82px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;flex-shrink:0}
@@ -53,6 +53,42 @@
   .core li{font-size:17px;color:var(--ink-2);line-height:1.75;padding:7px 0;border-bottom:1px dashed var(--line);list-style:none}
   .core li:last-child{border-bottom:none}
   .core b{color:var(--ink)}
+  /* ===== 人选画像导读（中立铺开：背景 / 路径 / 能力 / 数字，不挑亮点） ===== */
+  .profile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px 6px}
+  .prof-block{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .prof-block:last-child{border-bottom:none}
+  .prof-h{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:9px;display:flex;align-items:center;gap:8px}
+  .prof-h::before{content:"";width:4px;height:14px;background:var(--orange);border-radius:2px}
+  .timeline{width:100%}
+  .tl-row{display:grid;grid-template-columns:130px 1fr 1fr 1.5fr;gap:10px;padding:7px 0;font-size:15px;color:var(--ink-2);line-height:1.6;border-bottom:1px dashed var(--line)}
+  .tl-row:last-child{border-bottom:none}
+  .tl-time{font-weight:700;color:var(--ink);white-space:nowrap}
+  .tl-org{font-weight:600;color:var(--navy)}
+  .tl-row.gap-row{background:#FBEFED;border-radius:8px;padding:7px 10px}
+  .tl-row.gap-row .tl-time{color:var(--red)}
+  .cap-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .cap-col{border-radius:12px;padding:12px 14px}
+  .cap-col.ok{background:#EFF8F3;border:1px solid #C7E4D5}
+  .cap-col.part{background:#FDF3EA;border:1px solid #F2D9BF}
+  .cap-col.gap{background:#FBEFED;border:1px solid #F0C9C2}
+  .cap-t{font-size:15px;font-weight:800;margin-bottom:8px}
+  .cap-col.ok .cap-t{color:var(--green)}
+  .cap-col.part .cap-t{color:#B45A1C}
+  .cap-col.gap .cap-t{color:var(--red)}
+  .cap-col ul{list-style:none;padding-left:0}
+  .cap-col li{font-size:14px;line-height:1.6;padding:3px 0 3px 14px;position:relative;color:var(--ink-2)}
+  .cap-col li::before{content:"";position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%}
+  .cap-col.ok li::before{background:var(--green)}
+  .cap-col.part li::before{background:#E8833A}
+  .cap-col.gap li::before{background:var(--red)}
+  .num-anchor{font-size:15px;line-height:1.8;color:var(--ink-2);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+  /* ===== 题源类型标签（F/S/C/R） ===== */
+  .qc-type{font-size:13px;font-weight:700;border-radius:6px;padding:3px 8px;background:var(--navy-2);color:#fff;flex-shrink:0}
+  .qc-type.f{background:#2A5BB7}
+  .qc-type.s{background:var(--green)}
+  .qc-type.c{background:var(--orange)}
+  .qc-type.r{background:var(--red)}
+  .qc-type.m{background:#6B4FBB}
   /* ===== 列表卡 ===== */
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-top:12px}
   .card p,.card li{font-size:17px;color:var(--ink-2);line-height:1.75}
@@ -168,6 +204,13 @@
     .page:not(.export-clone) .qcard{padding:16px 14px}
     .page:not(.export-clone) .qc-num{width:30px;height:30px;font-size:15px}
     .page:not(.export-clone) .qc-dim{font-size:13px}
+    .page:not(.export-clone) .profile{padding:14px}
+    .page:not(.export-clone) .prof-h{font-size:14px}
+    .page:not(.export-clone) .tl-row{grid-template-columns:1fr;gap:2px;font-size:13px;padding:6px 0}
+    .page:not(.export-clone) .cap-grid{grid-template-columns:1fr}
+    .page:not(.export-clone) .cap-col li{font-size:13px}
+    .page:not(.export-clone) .num-anchor{font-size:13px}
+    .page:not(.export-clone) .qc-type{font-size:11px;padding:2px 6px}
     .page:not(.export-clone) .qc-main{display:block}
     .page:not(.export-clone) .qc-label{display:block;width:auto;font-size:12px;margin-bottom:4px;padding-top:0}
     .page:not(.export-clone) .qc-question{font-size:17px;line-height:1.7}
@@ -203,332 +246,378 @@
 
 <div class="page" id="page">
 
-  <!-- ===== 1 头部 ===== -->
+  <!-- ===== 1 头部（人选名字 + 岗位 + 身份标识 + 面试建议聚焦条） ===== -->
+  
   <section class="hero" data-mod="header">
     <div class="grid-lines" aria-hidden="true"></div>
-    <div class="wmark editable">示例产物 · 候选人与履历均为虚构</div>
+    <div class="wmark editable">内部资料 · 仅限面试评估使用</div>
     <div class="hero-top">
-      <span class="hero-badge editable">2026-11-09</span>
-      <span class="hero-badge mid editable">匹配度 · 中</span>
+      <span class="hero-badge editable">2026-11-25</span>
+      <span class="hero-badge mid editable">匹配度 · 中高</span>
     </div>
     <h1 class="hero-name editable">李明</h1>
     <p class="hero-role editable">高级用户增长经理 · 上海</p>
-    <p class="hero-tag editable">8 年用户增长，两次从低基数拉起增长曲线，带过 4→7 人团队</p>
+    <p class="hero-tag editable">7 年增长老兵：带过 4 人和 7 人小团队、拉新 320 万、GMV 从 0 做到 2400 万；空档 14 个月需核实</p>
     <div class="hero-focus">
       <span class="focus-label">面试建议</span>
-      <span class="focus-tag"><span class="editable">增长打法可复制性</span><span class="chip-del" title="编辑模式下点击删除">×</span></span>
-      <span class="focus-tag"><span class="editable">放量中的成本控制</span><span class="chip-del" title="编辑模式下点击删除">×</span></span>
-      <span class="focus-tag"><span class="editable">团队带教与稳定性</span><span class="chip-del" title="编辑模式下点击删除">×</span></span>
+      <span class="focus-tag"><span class="editable">先摸真实管理权责</span><span class="chip-del" title="编辑模式下点击删除">×</span></span>
+      <span class="focus-tag"><span class="editable">再验 14 个月空档</span><span class="chip-del" title="编辑模式下点击删除">×</span></span>
+      <span class="focus-tag"><span class="editable">重点看经营意识</span><span class="chip-del" title="编辑模式下点击删除">×</span></span>
     </div>
     <button class="add-chip" type="button" onclick="addChip()">+ 添加聚焦点</button>
   </section>
 
-  <!-- ===== 2 匹配度与核心优势 ===== -->
-  <section data-mod="match">
-    <div class="sec"><span class="no">MATCH</span><h2>匹配度与核心优势</h2><span class="hint">按岗位画像逐维对照</span></div>
-    <div class="match">
-      <div class="match-top">
-        <div class="match-badge mid editable">中</div>
-        <p class="match-summary editable"><b>达标</b>：职能方向、职级层级、经验年限、学历、结果指标交付；<b>核心风险</b>：近段在职 1.5 年 + 空档 14 个月，稳定性与成果口径需验证。</p>
+
+  <!-- ===== 2 人选画像 · 简历导读（中立铺开：先看背景路径，再看人岗匹配） ===== -->
+  
+  <section data-mod="profile">
+    <div class="sec"><span class="no">PROFILE</span><h2>人选画像 · 简历导读</h2><span class="hint">中立呈现，不挑亮点</span></div>
+    <div class="profile">
+      <div class="prof-block">
+        <h3 class="prof-h">职业路径</h3>
+        <div class="timeline">
+          <div class="tl-row"><span class="tl-time editable">2022.03–2023.08</span><span class="tl-org editable">某社区团购公司</span><span class="tl-role editable">增长负责人 · 带 7 人</span><span class="tl-out editable">GMV 从 0 做到月均 2400 万 · 17 个月</span></div>
+          <div class="tl-row"><span class="tl-time editable">2019.07–2022.02</span><span class="tl-org editable">某在线教育公司</span><span class="tl-role editable">增长经理 → 负责人（2020 晋升，带 4 人）</span><span class="tl-out editable">拉新 320 万 · CAC 48→31（-35%） · 2 年 7 个月</span></div>
+          <div class="tl-row"><span class="tl-time editable">2016.07–2019.06</span><span class="tl-org editable">某电商公司</span><span class="tl-role editable">运营专员 → 高级运营</span><span class="tl-out editable">运营基础 + 分析 · 3 年</span></div>
+          <div class="tl-row gap-row"><span class="tl-time editable">2023.09–至今</span><span class="tl-org editable">空档</span><span class="tl-role editable">—</span><span class="tl-out editable">个人项目 · 去向待核实 · 14 个月</span></div>
+        </div>
       </div>
-      <div class="match-dim">
-        <span class="md ok">职能方向 · 达标</span>
-        <span class="md ok">职级层级 · 达标</span>
-        <span class="md ok">经验年限 · 达标</span>
-        <span class="md ok">学历背景 · 达标</span>
-        <span class="md ok">结果指标交付 · 达标</span>
-        <span class="md ok">数据分析能力 · 达标</span>
-        <span class="md part">团队建设 · 部分</span>
-        <span class="md part">行业背景 · 部分</span>
-        <span class="md gap">跨部门影响力 · 缺口</span>
+      <div class="prof-block">
+        <h3 class="prof-h">能力要素盘点</h3>
+        <div class="cap-grid">
+          <div class="cap-col ok">
+            <div class="cap-t">已验证的能力</div>
+            <ul>
+              <li class="editable">拉新：裂变体系单月 60 万新增，拉新 320 万</li>
+              <li class="editable">CAC 优化：48→31，-35%</li>
+              <li class="editable">带小团队：4 人和 7 人，均已晋升负责人</li>
+              <li class="editable">从 0 到 1：GMV 从 0 到月均 2400 万</li>
+            </ul>
+          </div>
+          <div class="cap-col part">
+            <div class="cap-t">自述待验证</div>
+            <ul>
+              <li class="editable">GMV 2400 万的毛利结构与回本周期（简历未提）</li>
+              <li class="editable">带 4/7 人的具体权责（考核权、人事权？）</li>
+            </ul>
+          </div>
+          <div class="cap-col gap">
+            <div class="cap-t">明确缺失</div>
+            <ul>
+              <li class="editable">8 人以上团队（岗位要 5-8 人，已验证最大 7 人）</li>
+              <li class="editable">5 年完整增长经验（简历总计 7 年，但空档 14 个月）</li>
+              <li class="editable">直播/电商行业（岗位优先，候选人在电商只做运营未到增长）</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="core">
-        <h3 class="editable">核心优势</h3>
-        <ul>
-          <li class="editable"><b>两次从低基数拉起曲线</b>：教育 App 新增 320 万、获客成本 48→31 元；社区团购 GMV 0→月均 2400 万 → 直接对应「结果指标交付」。</li>
-          <li class="editable"><b>增长打法成体系</b>：裂变体系单月最高 60 万新增，说明不只会投放 → 对应 JD「制定增长策略并落地」。</li>
-          <li class="editable"><b>管理幅度有递进</b>：团队从 4 人带到 7 人，职级从经理到负责人 → 对应 JD「搭建 5-8 人团队」。</li>
-        </ul>
+      <div class="prof-block">
+        <h3 class="prof-h">关键数字锚点</h3>
+        <p class="num-anchor editable">拉新 320 万 / CAC 48→31（-35%） / 裂变 60 万 / GMV 月均 2400 万 / <b>团队最大 7 人</b> / <b>空档 14 个月</b> / 上海</p>
       </div>
     </div>
   </section>
 
+
+  <!-- ===== 3 匹配度诊断（结论，基于画像逐维对照） ===== -->
+  
+  <section data-mod="match">
+    <div class="sec"><span class="no">MATCH</span><h2>匹配度诊断</h2><span class="hint">按岗位画像逐维对照</span></div>
+    <div class="match">
+      <div class="match-top">
+        <div class="match-badge mid editable">中高</div>
+        <p class="match-summary editable">达标项：<b>增长方法论齐全（拉新 + 裂变 + CAC 优化）、有从 0 到 1 经验、带小团队经历</b>；核心风险：<b>2023.09 至今 14 个月空档，最大团队 7 人与岗位 5-8 人边缘，直播/电商行业未覆盖</b>。</p>
+      </div>
+      <div class="match-dim">
+        <span class="md ok">增长方法论 · 达标</span>
+        <span class="md ok">从 0 到 1 经验 · 达标</span>
+        <span class="md ok">SQL / 数据敏感度 · 达标</span>
+        <span class="md ok">5 年增长经验（含空档） · 达标</span>
+        <span class="md part">带 5-8 人团队 · 部分（最大 7 人）</span>
+        <span class="md part">直播 / 电商行业 · 部分（电商只做运营）</span>
+        <span class="md gap">履历连续性 · 缺口（14 个月空档）</span>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ===== 3 待考察点 ===== -->
+  
   <section data-mod="checkpoints">
     <div class="sec"><span class="no">CHECKPOINTS</span><h2>待考察点</h2><span class="hint">面试要验证什么 + 怎么验证</span></div>
     <div class="card">
       <ul>
-        <li class="editable"><span class="tag red" title="编辑模式下点击可删除">红线</span><b>空档 14 个月</b>（2023.09 至今，标注个人项目）→ 中性框架核实时间线，只确认事实，不追问隐私。</li>
-        <li class="editable"><span class="tag orange" title="编辑模式下点击可删除">核心</span><b>两段任职偏短</b>（3 年、1.5 年）且职级递进快 → 问离职归因与决策依据，看是否可复现。</li>
-        <li class="editable"><span class="tag orange" title="编辑模式下点击可删除">核心</span><b>「GMV 0→月均 2400 万」口径模糊</b> → 拆自营/平台、是否含补贴、个人贡献边界。</li>
-        <li class="editable"><span class="tag orange" title="编辑模式下点击可删除">核心</span><b>教育行业裂变打法可迁移性未验证</b> → 用情境题验证迁移，不让候选人复述旧成果。</li>
-        <li class="editable"><span class="tag blue" title="编辑模式下点击可删除">一般</span><b>团队质量与留存未知</b>（带 7 人，走了几个未提）→ 问留存、培养与换人决策。</li>
-        <li class="editable"><span class="tag blue" title="编辑模式下点击可删除">一般</span><b>直播/电商为 JD 优先项，简历未提</b> → 只问迁移与补法，不问「你做过吗」。</li>
+        <li class="editable"><span class="tag orange">核心</span><b>真实管理权责</b>：触发信号 → 把"协调资源"说成"带团队"，说不出考核权与人事权，或团队成员都是自己面试招的但 HR 也参与很多。验证方式 → 先问汇报关系、考核权、人事权（招 / 汰），再追问一次亲自招人、一次劝退。</li>
+        <li class="editable"><span class="tag orange">核心</span><b>GMV 2400 万的经营质量</b>：触发信号 → 只报 GMV，说不清毛利、客单价、回本周期。验证方式 → 追问 GMV 里的客单价 / 毛利 / 补贴占比，以及这笔业务的 CAC / LTV。</li>
+        <li class="editable"><span class="tag red">红线</span><b>2023.09–至今 14 个月空档</b>：触发信号 → 只用"做了点个人项目"带过，说不出具体项目、投入产出、是否与原客户有往来。验证方式 → 按月回忆项目 + 投入 + 结果；有创业则看工商或合作合同；同时排查竞业风险。</li>
+        <li class="editable"><span class="tag blue">一般</span><b>教育 → 增长的转型质量</b>：触发信号 → 把"用户运营"和"增长"混为一谈，说不清 CAC / LTV / 漏斗模型的首次应用场景。验证方式 → 让其讲从电商运营到教培增长的关键一跳，以及第一次用增长思维做的事。</li>
       </ul>
     </div>
   </section>
 
-  <!-- ===== 4 业务面问题清单 ===== -->
+
+  <!-- ===== 4 业务面问题清单（教学卡） ===== -->
+  
   <section data-mod="biz">
-    <div class="sec"><span class="no">BIZ</span><h2>业务面问题清单</h2><span class="hint">教学卡 · 针对人选经历定制 · 30 分钟</span></div>
+    <div class="sec"><span class="no">BIZ</span><h2>业务面问题清单</h2><span class="hint">教学卡 · 先摸事实，再验能力 · 30 分钟</span></div>
     <div id="biz-list">
-
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q1</span><span class="qc-dim editable">考察维度：增长打法成型度 ｜ 口径真实性 · 成本结构理解</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">教育 App 那次新增 320 万、获客成本从 48 元降到 31 元。请完整讲一下：这 320 万里，投放、裂变、自然增长各占多少？成本下降主要是哪个动作带来的？</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[对口径]</span>31 元的获客成本包含哪些？只算投放，还是含补贴和地推？</p>
-            <p class="editable"><span class="skill-tag">[漏斗追问]</span>从那 320 万的曝光到注册，转化率是多少？裂变 K 值大概多少？</p>
-            <p class="editable"><span class="skill-tag">[对抗验证]</span>预算砍一半，你会砍哪块、保哪块？</p>
-            <p class="editable"><span class="skill-tag">[反例法]</span>有没有哪个渠道你投了但最后关掉了？为什么？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">锚定成功要素「能拉起曲线且放量中成本不失控」。要求拆解构成，是判断真伪最有效的入口——真操盘过的人对渠道结构有肌肉记忆，临时包装的人只会记住总数。</p></div>
+        <div class="qc-head"><span class="qc-num">Q1</span><span class="qc-type f editable">F 事实摸底</span><span class="qc-dim editable">考察维度：真实管理跨度与权责（管理三步法 1-2 步）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">您在教培和社区团购两段经历里都带过团队。方便具体说说各自带了多少人、是什么岗位、有没有考核权、招人辞退和费用审批的权限吗？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[对口径]</span>简历里写「增长负责人」——这个头衔意味着您的考核是结果导向还是过程导向？谁给您打绩效？</p>
+            <p class="editable"><span class="skill-tag">[STAR 补问]</span>能不能讲一次您亲自招人的经历：招的什么岗位、花了多久、凭什么判断他合适？</p>
+            <p class="editable"><span class="skill-tag">[反例法]</span>有没有带得比较吃力、最后选择劝退的下属？方便讲讲当时是怎么谈的吗？</p>
+            <p class="editable"><span class="skill-tag">[递进追问]</span>您给下属定目标、做绩效评估吗？举一个具体例子。</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">管理是这份简历的核心职责，但直接问「您怎么带 5-8 人」只会得到编造答案。先查清两段经历里的真实权责边界（汇报关系、考核权、人事权、预算权），再用招人与劝退两个真实事件验证。若这一步证实无人事权、直接下属不足 5 人，「带 5-8 人」即为硬缺口。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">能拆出三源占比，并说明各源的变化趋势</li><li class="editable">成本下降归因到具体动作（素材、定向、裂变系数）</li><li class="editable">讲得出放量后成本反弹时怎么应对</li><li class="editable">主动提到羊毛党、补贴退坡的处理</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">只说总数，说不出构成</li><li class="editable">把成本下降全部归因为「优化了投放」</li><li class="editable">没有放量后成本反弹的经历</li><li class="editable">口径前后矛盾，被追问后改口</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">能清楚区分直接 / 间接下属与借用资源</li>
+              <li class="editable">有人事权或至少掌握实质考核权</li>
+              <li class="editable">招人与劝退各有一个完整案例，能说出判断标准</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">把「协调资源」说成「带团队」</li>
+              <li class="editable">说不出直接下属人数与汇报关系</li>
+              <li class="editable">招人、劝退都答「没有」或推给 HR</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q2</span><span class="qc-dim editable">考察维度：增长方法论可复制性</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">裂变体系单月最高 60 万新增，这个体系具体是什么机制？分享率、K 值、单用户成本大概是什么水平？</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[细节还原]</span>奖励是什么？单人补贴多少？有没有被薅？</p>
-            <p class="editable"><span class="skill-tag">[对口径]</span>60 万是注册还是激活？7 日留存多少？</p>
-            <p class="editable"><span class="skill-tag">[假设法]</span>奖励预算砍 70%，这个体系还成立吗？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">「搭建裂变体系」是高频注水表述。要求讲机制与关键指标，能把「做过活动」和「搭过体系」区分开；假设法检验他是否理解体系的成本边界。</p></div>
+        <div class="qc-head"><span class="qc-num">Q2</span><span class="qc-type f editable">F 事实摸底</span><span class="qc-dim editable">考察维度：关键数字的构成（口径核验）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">简历里三组关键数字我想对一下口径：教培 2021 年新增用户 320 万、社区团购 GMV 月均 2400 万、裂变单月 60 万。方便分别说说构成吗——320 万里裂变贡献多少、GMV 里毛利和补贴占比多少？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[对口径]</span>320 万的获客成本是 31 元——这个口径含不含老客回流？补贴和渠道分成在不在里面？</p>
+            <p class="editable"><span class="skill-tag">[SMART 校验]</span>月均 GMV 2400 万里，峰值月份到过多少？淡季掉到过多少？</p>
+            <p class="editable"><span class="skill-tag">[漏斗追问]</span>60 万裂变是哪一个月？触发了什么事件或活动？</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">数字是简历的核心卖点，也最容易口径注水。让他自己拆构成，既验证真实性，也为后面的情境题提供事实底座——数字拆不开，后面的深挖全部悬空。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">说得出机制（邀请奖励、任务体系、分销）</li><li class="editable">有 K 值或分享率的真实数量级</li><li class="editable">清楚补贴成本与留存的关系</li><li class="editable">讲得出体系后来为什么停或怎么迭代</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">只会说「做了裂变活动」，没有机制</li><li class="editable">没有任何关键指标</li><li class="editable">把 60 万全归体系，实际含大量投放</li><li class="editable">说不清留存，只谈新增</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">主动拆渠道与毛利结构</li>
+              <li class="editable">GMV 有峰谷波动，不是单调</li>
+              <li class="editable">能说清裂变触发事件与条件</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">只重复总数，拆不开结构</li>
+              <li class="editable">GMV 不含补贴和物流成本</li>
+              <li class="editable">说不清裂变峰值发生了什么</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q3</span><span class="qc-dim editable">考察维度：从 0 到 1 的冷启动能力</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">社区团购 GMV 从 0 到月均 2400 万，前三个月你具体做了什么？第一个月做到多少？</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[对口径]</span>2400 万是 GMV 还是实收？含补贴吗？</p>
-            <p class="editable"><span class="skill-tag">[漏斗追问]</span>团长数量、单团月均、复购率大概什么水平？</p>
-            <p class="editable"><span class="skill-tag">[反例法]</span>哪个城市做失败了？为什么？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">「0 到 2400 万」时间跨度不明，可能一年也可能三年。追问前三个月，能还原真实启动难度与个人角色，并检验「从 0 到 1」是否由他主导。</p></div>
+        <div class="qc-head"><span class="qc-num">Q3</span><span class="qc-type s editable">S 成功要素</span><span class="qc-dim editable">考察维度：从 0 到 1 的增长能力（成功要素 A）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">2022 年社区团购 GMV 从 0 做到月均 2400 万，只用了 17 个月。能不能请您从第一个月讲起——当时团队什么样、第一个月的 GMV 是多少、哪几个动作对结果贡献最大？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[亮点深挖]</span>第一个月是多少 GMV？主要靠什么拉起来的（渠道 / 活动 / 补贴）？</p>
+            <p class="editable"><span class="skill-tag">[漏斗追问]</span>增长过程中卡过最大的坎是什么？您具体动了哪几个杠杆把 GMV 拉上来的？</p>
+            <p class="editable"><span class="skill-tag">[对抗验证]</span>如果换一位也做过社区团购的增长负责人，这单能成吗？您觉得自己不可替代的地方在哪？</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">锚定 Q1 已摸清的管理权和 Q2 的 GMV 口径事实。从 0 到 1 是候选人最强的一段，也是验证增长方法论（产品 / 渠道 / 补贴 / 拉新）最干净的场景。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">说得出首个城市/小区的具体打法</li><li class="editable">有分月数据，不回避早期低数字</li><li class="editable">讲得清供给（团长/商品）与需求怎么同时起量</li><li class="editable">主动承认早期踩的坑</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">只说总数，给不出阶段数据</li><li class="editable">把平台资源当个人能力</li><li class="editable">说不出第一个月的数字</li><li class="editable">角色是「负责整体」但细节全无</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">能说清 GMV 爬升曲线与对应动作</li>
+              <li class="editable">能说出产品、渠道、补贴中的具体杠杆</li>
+              <li class="editable">能区分自己独有的判断与动作</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">只说「做了很多事」，说不出具体动作</li>
+              <li class="editable">全部归因于平台和供给</li>
+              <li class="editable">说不清哪部分是自己独有的</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q4</span><span class="qc-dim editable">考察维度：团队建设与授权 ｜ 管理幅度真实性</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">社区团购那段你带 7 个人，团队怎么分工的？讲一个你带的人从不能独立扛事到能独立扛事的过程。</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[递进追问]</span>这个人当时具体卡在哪？你怎么判断他可以独立了？</p>
-            <p class="editable"><span class="skill-tag">[时间线验证]</span>这 7 个人在你任期内走了几个？为什么走？</p>
-            <p class="editable"><span class="skill-tag">[假设法]</span>只能留 3 个人，你留谁、为什么？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">带人题最容易注水，「我带团队」可能只是有汇报线。要求讲具体某个人的成长过程，能自然区分真带人和挂名带人；问留存则检验团队是否可持续。</p></div>
+        <div class="qc-head"><span class="qc-num">Q4</span><span class="qc-type s editable">S 成功要素</span><span class="qc-dim editable">考察维度：裂变与拉新的可复制性（成功要素 A）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">您搭建的裂变体系单月最高带来 60 万新增，教培拉新 320 万。方便讲讲这个裂变体系的核心机制是什么？哪些是产品层面的改动、哪些是运营层面的节奏？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[对口径]</span>这个体系迁移到教育品类时做了哪些调整？跟社区团购有差异吗？</p>
+            <p class="editable"><span class="skill-tag">[反例法]</span>有没有试过迁移到别的渠道或品类，效果不理想的？方便说说原因吗？</p>
+            <p class="editable"><span class="skill-tag">[递进追问]</span>从 0 到 1 搭建这个体系花了多久？踩了哪些坑？</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">锚定 Q2 已确认的裂变口径。裂变是跨品类可迁移的增长方法，比单点的社区团购案例更能预测候选人在新业务上的适配度。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">分工边界清晰，能说出谁负责什么</li><li class="editable">有具体培养动作，不是「多沟通」</li><li class="editable">说得出下属的短板与改进过程</li><li class="editable">有过换人或淘汰的实际决策</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">只说「团队氛围好」</li><li class="editable">所有下属都是「很优秀」</li><li class="editable">把团队成果全部归自己</li><li class="editable">说不出任何一个人的具体问题</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">能说清核心机制（产品层 / 运营层 / 激励层）</li>
+              <li class="editable">能说出跨品类迁移的差异与调整</li>
+              <li class="editable">有踩坑和迭代的故事</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">只说「办了活动」，说不出机制</li>
+              <li class="editable">全靠补贴堆出来</li>
+              <li class="editable">迁移效果差但说不清原因</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q5</span><span class="qc-dim editable">考察维度：跨部门影响力（主导还是配合）</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">教育公司做裂变体系那次，需要产品、数据、市场三方配合。挑一个当时推进最难的环节，讲一下你怎么让对方愿意按你的节奏走。</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[细节还原]</span>当时产品排期卡在哪？你拿什么换的？</p>
-            <p class="editable"><span class="skill-tag">[时间线验证]</span>从提出到上线用了多久？中间返工几次？</p>
-            <p class="editable"><span class="skill-tag">[STAR补问]</span>如果对方坚持不改，你的 Plan B 是什么？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">简历只写「与产品、数据、市场紧密协作」，没有任何具体证据，是画像里的缺口维度。要求讲「最难的环节」，能区分真正推动过的人和只是参会的人。</p></div>
+        <div class="qc-head"><span class="qc-num">Q5</span><span class="qc-type s editable">S 成功要素</span><span class="qc-dim editable">考察维度：团队建设从 4 人到 7 人（成功要素 C）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">2020 年您从经理晋升负责人、带 4 人，后来到社区团购带 7 人。能不能聊聊您是怎么把这两个团队从 0 搭起来的？招聘节奏、岗位配比、怎么判断一个人合适？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[STAR 补问]</span>团队里最能打的一位，是您招的还是他自己进来的？为什么他最能打？</p>
+            <p class="editable"><span class="skill-tag">[反例法]</span>有没有招错人、带来损失的经历？方便说说当时怎么处理的？</p>
+            <p class="editable"><span class="skill-tag">[递进追问]</span>7 人团队现在还在一起吗？留下来的几个您觉得关键在什么地方？</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">锚定 Q1 已摸的真实权责边界。两段带团队经历是管理岗位的核心证据，既验证管理能力本身，也印证 Q1 里关于人事权的回答是否一致。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">说得出具体卡点（排期、埋点口径、素材产能）</li><li class="editable">有交换筹码（资源、优先级、数据支持）</li><li class="editable">有明确的升级机制（何时找老板）</li><li class="editable">事后有沉淀（流程、模板、协作规范）</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">只说「沟通顺畅」「大家配合得很好」</li><li class="editable">说没遇到任何阻力（说明没真正推动过）</li><li class="editable">把所有功劳归自己，不提对方贡献</li><li class="editable">讲不出具体的协作机制</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">能说清招聘节奏与岗位配比</li>
+              <li class="editable">有一个成功招人的完整故事</li>
+              <li class="editable">有踩坑和处理案例</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">只说「团队挺好」，说不出具体人或事</li>
+              <li class="editable">团队都是现成的，自己没招过</li>
+              <li class="editable">招错人也没有处理</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q6</span><span class="qc-dim editable">考察维度：迁移与判断力 ｜ 资源约束下的取舍</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">假设你接手我们这条线：日活 80 万、新增主要靠投放、ROI 1.3、预算每月 200 万、团队 5 人。前 60 天你做哪三件事，分别预期什么结果？</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[对口径]</span>ROI 1.3 你按什么口径算的？含不含复购？</p>
-            <p class="editable"><span class="skill-tag">[情境模拟]</span>如果 60 天后数据没动，你的判断是什么？</p>
-            <p class="editable"><span class="skill-tag">[假设法]</span>团队只有 3 个人，砍哪两件事？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">情境参数齐全（DAU、ROI、预算、团队人数），能区分「有方法论」和「背过 AARRR」。教育行业的裂变经验能否迁移到当前业务，在这里见分晓；给量化预期则检验他是否真会定目标。</p></div>
+        <div class="qc-head"><span class="qc-num">Q6</span><span class="qc-type c editable">C 情境前瞻</span><span class="qc-dim editable">考察维度：经营意识与 P&L 视角（成功要素 B）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">假设您接手上海的这个岗位：月均投放预算 200 万、团队 5-8 人、目标 12 个月内拉新 200 万、保持 CAC 在 35 以内。前 90 天您怎么排？请按月说说动作，以及判断是否继续投入的指标？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[情境模拟]</span>如果第 90 天发现按现有打法 CAC 只能降到 45，您会先砍哪块、加哪块？</p>
+            <p class="editable"><span class="skill-tag">[假设法]</span>如果公司把投放预算砍到 100 万、目标不变，您怎么取舍？优先保拉新还是保 CAC？</p>
+            <p class="editable"><span class="skill-tag">[SMART 校验]</span>90 天结束时，用哪个数字证明「局面打开了」？</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">锚定 Q2 的 GMV / 毛利事实和 Q3 的增长打法。高级增长经理和增长负责人的核心差别是经营：预算拆解、资源排序、止损判断。给死约束能逼出真实取舍，而不是口号。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">先诊断再动手，不直接抛打法</li><li class="editable">三件事有优先级和依赖关系</li><li class="editable">给量化预期，而不是「提升用户量」</li><li class="editable">主动设止损线与验证成本</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">直接套 AARRR 五步，不结合参数</li><li class="editable">只讲投放优化，忽略产品与留存</li><li class="editable">预期全是「提升」「优化」，无数字</li><li class="editable">不设止损，默认一定成功</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">能按月拆解：测渠道 / 定模型 / 跑预算分配</li>
+              <li class="editable">有明确止损线（CAC / 留存 / LTV）</li>
+              <li class="editable">预算砍半时能优先保一条主线</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">上来就是「全渠道一起投」</li>
+              <li class="editable">只承诺完成，不给拆解</li>
+              <li class="editable">把经营问题推给产品或品牌</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q7</span><span class="qc-dim editable">考察维度：缺口迁移能力（JD 优先项缺口）</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">JD 里直播/电商是加分项，你简历里主要是电商和教育。如果我们这条线有一半增长由直播带动，你会先补哪块认知、怎么补？</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[情境模拟]</span>如果第一周就要你给直播投放定 ROI 目标，你怎么定？</p>
-            <p class="editable"><span class="skill-tag">[换角度]</span>你觉得直播增长最容易踩的坑是什么？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">缺口题不问「你做过吗」——问了只会得到包装。问「怎么补」，看的是学习路径是否具体、是否清楚自己的盲区，以及旧打法里哪些真能迁移。</p></div>
+        <div class="qc-head"><span class="qc-num">Q7</span><span class="qc-type c editable">C 情境前瞻</span><span class="qc-dim editable">考察维度：资源配置与取舍（成功要素 B）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">岗位要求和产品、数据、市场三方紧密协作，但实际资源总是有限。如果数据团队同时服务您和品牌，给您的支持只够做一件事——要么补一个转化漏斗、要么做 A/B 实验平台，您先让他们做哪件？为什么？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[情境模拟]</span>如果您选择先做漏斗，但品牌那边已经在排同一个数据资源了，您怎么协调？</p>
+            <p class="editable"><span class="skill-tag">[反例法]</span>有没有您主动放弃过一个项目或一个渠道？判断标准是什么？</p>
+            <p class="editable"><span class="skill-tag">[递进追问]</span>您日常怎么和产品、市场对齐节奏？有没有固定机制？</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">锚定 Q1 的管理权责和 Q6 的预算事实。成熟期岗位的日常压力就是跨团队协作的资源争抢——这题测的是协作能力和优先级判断，而不是增长技能本身。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">坦承没做过直播，不硬撑</li><li class="editable">说得出现有打法里哪些可迁移（人群分层、投放模型、裂变机制）</li><li class="editable">有具体补法：找谁学、看什么数据、多久验证</li><li class="editable">知道直播与货架电商的关键差异</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">声称「都差不多」，不承认差异</li><li class="editable">把电商经验直接等同于直播经验</li><li class="editable">补法只有「多学习」「多看看」</li><li class="editable">回避问题，绕回自己的旧成果</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">能说清优先级判断标准（影响面 / 紧迫性 / 投入产出）</li>
+              <li class="editable">有跨团队协作机制（周会 / 看板 / SLA）</li>
+              <li class="editable">能说出放弃决策</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">「都要」，拒绝排序</li>
+              <li class="editable">只靠个人交情协调</li>
+              <li class="editable">没有固定协作机制</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q8</span><span class="qc-dim editable">考察维度：履历连续性与稳定性（中性框架）</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">2023 年 9 月之后到现在这段时间，你在做什么？我按时间线跟你确认一下，方便后面聊经历。</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[时间线验证]</span>这期间有接触过工作机会吗？为什么没成？</p>
-            <p class="editable"><span class="skill-tag">[STAR补问]</span>如果入职，这段时间会不会影响你对节奏的适应？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">14 个月空档是红线，但直接质疑会让人进入防御。先用中性框架确认事实，再看叙述是否一致、有没有可验证的产出——问的是连续性，不是隐私。</p></div>
+        <div class="qc-head"><span class="qc-num">Q8</span><span class="qc-type r editable">R 风险缺口</span><span class="qc-dim editable">考察维度：履历连续性（14 个月空档）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">简历里 2023.09 到现在是 14 个月的空档。这段时间对您来说是家庭安排、创业尝试、还是休息充电？方便按月回忆一下吗？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[时间线验证]</span>空档期您的社保、个税由哪家单位缴纳？如果是个人项目，有没有实际投入和产出？</p>
+            <p class="editable"><span class="skill-tag">[对口径]</span>有没有以顾问、合作、分包等形式，和原来的公司或客户发生过业务往来？</p>
+            <p class="editable"><span class="skill-tag">[假设法]</span>如果这段经历里有不方便公开的部分，您希望我们怎么理解它？</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">14 个月的空档在 5 年增长经验的岗位上是核心疑点，必须核清。中性框架（给选项）+ 按月追问 + 佐证要求，既能拿到真实信息，也避免候选人因防御而编造；同时排查竞业与合规风险。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">时间线清楚，与简历一致</li><li class="editable">有具体在做的事，且说得出产出</li><li class="editable">说清为什么现在回到职场</li><li class="editable">对这段经历有反思，不回避</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">时间线前后矛盾</li><li class="editable">含糊其辞，只说「一直在看机会」</li><li class="editable">明显防御或情绪化</li><li class="editable">把空档归因于外部，但说不清具体发生了什么</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">按月能说清、有具体项目和结果，时间线自洽</li>
+              <li class="editable">空档有明确原因并愿意提供佐证</li>
+              <li class="editable">主动说明与原客户的边界</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">时间线模糊矛盾，拒绝佐证</li>
+              <li class="editable">一句「休息」带过，追问后改口或不耐烦</li>
+              <li class="editable">空档期实际在给同行或客户做事却隐瞒</li></ul></div>
         </div>
       </div>
 
       <div class="qcard">
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q9</span><span class="qc-dim editable">考察维度：离职归因与动机稳定性</span></div>
-        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">社区团购那段只做了一年半，当时为什么离开？如果这次机会也遇到类似情况，你会怎么判断？</p></div>
-        <div class="qc-follow">
-          <span class="qc-label">追问路径</span>
-          <div>
-            <p class="editable"><span class="skill-tag">[时间线验证]</span>离开前后团队走了多少人？是普遍现象还是个人选择？</p>
-            <p class="editable"><span class="skill-tag">[递进追问]</span>如果这次业务也收缩，你会提前多久做判断？</p>
-          </div>
-        </div>
-        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">两段任职偏短是稳定性风险。问「为什么离开」容易得到体面答案，加上「类似情况再发生你怎么判断」，能看出他的决策逻辑是否稳定、是否会重复同样的选择。</p></div>
+        <div class="qc-head"><span class="qc-num">Q9</span><span class="qc-type m editable">M 动机收尾</span><span class="qc-dim editable">考察维度：动机与稳定性（收尾 · 双向选择）</span></div>
+        <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">您在增长赛道上已经跑了 7 年，从电商运营到教培增长、再到社区团购增长负责人。三次跨行业的选择背后，您怎么看自己这几年的成长？为什么现在想回到电商行业的高级增长经理岗位？未来 3 年您希望自己在这里做成什么样？</p></div>
+        <div class="qc-follow"><span class="qc-label">追问路径</span><div>            <p class="editable"><span class="skill-tag">[亮点深挖]</span>这三段里您觉得最有成就感的是哪一段？为什么离开它的时候没能把它带在身边？</p>
+            <p class="editable"><span class="skill-tag">[对抗验证]</span>如果给您的投放预算比您过去最高还加 30%，您第一反应是什么？</p>
+            <p class="editable"><span class="skill-tag">[假设法]</span>如果 6 个月后公司要您从上海调去杭州或广州，您怎么考虑？</p></div></div>
+        <div class="qc-reason"><span class="qc-label">设计原理</span><p class="editable">收尾看动机真实性与期望可管理性。用「预算 +30%」测抗压与自我评估，用「异地调动」测稳定性承诺，避免入职后因预期不符快速流失。</p></div>
         <div class="qc-pair">
-          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good"><li class="editable">归因具体，且有事实支撑（业务收缩、方向不合）</li><li class="editable">不贬低前东家，表述克制</li><li class="editable">说得出下次会怎么判断</li><li class="editable">对在职时长有自省</li></ul></div>
-          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad"><li class="editable">全部归因于外部环境</li><li class="editable">抱怨前公司或前领导</li><li class="editable">说不清当时的决策依据</li><li class="editable">对「再遇到」没有任何判断标准</li></ul></div>
+          <div class="pair-card good-card"><span class="pair-tag">高分锚定</span><ul class="good">              <li class="editable">动机指向「把一份增长事做透」，而非单纯薪资</li>
+              <li class="editable">对高预算先问资源口径，再谈打法</li>
+              <li class="editable">对异地调动有清晰安排和条件</li></ul></div>
+          <div class="pair-card bad-card"><span class="pair-tag">红旗信号</span><ul class="bad">              <li class="editable">动机只说「离家近、稳定」</li>
+              <li class="editable">对任何目标都一口答应</li>
+              <li class="editable">对调动含糊其辞或明显抗拒</li></ul></div>
         </div>
-      </div>
-
-    </div>
+      </div></div>
     <button class="add-btn" type="button" onclick="addCard('biz')">+ 添加业务面问题卡</button>
   </section>
 
+
   <!-- ===== 5 HR面问题清单 ===== -->
+  
   <section data-mod="hr">
-    <div class="sec"><span class="no">HR</span><h2>HR面问题清单</h2><span class="hint">所选模式：结构化模板 · 30 分钟</span></div>
+    <div class="sec"><span class="no">HR</span><h2>HR面问题清单</h2><span class="hint">自由题组 · 8 题 · 约 30 分钟</span></div>
     <div id="hr-list">
-
       <div class="hrsec">
-        <div class="hr-head"><span class="hn">一</span><h3 class="editable">身份与诚信（防造假 + 防扯皮）</h3></div>
-        <div class="hr-body">
-          <ul>
-            <li class="editable">学历：确认本科院校、毕业时间、是否全日制、学信网可查（JD 要求本科及以上）。</li>
-            <li class="editable">履历：逐段确认起止时间；重点确认 2023.09 至今的状态（创业、学习还是求职），只核时间线，不追问隐私。</li>
-            <li class="editable">成果口径前置：简历中「新增 320 万」「GMV 2400 万」是否由本人主导，能否提供脱敏数据佐证。</li>
-          </ul>
-          <span class="purpose">目的：硬信息先核真伪；口径在 HR 面先说清，避免业务面重复消耗时间</span>
-        </div>
+        <div class="hr-head"><span class="hn">一</span><h3 class="editable">履历与空档核实</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">请提供 2023.09 至今的时间线说明与任一佐证：社保、个税、合作合同或创业主体。</li>
+            <li class="editable">逐段确认三段经历的入离职月份、职位名称、汇报对象与团队规模。</li>
+            <li class="editable">学历核验：市场营销本科是否为全日制、学信网可查。</li></ul><span class="purpose">目的：硬信息先核真。空档期是本次最大疑点，HR 负责拿到材料，业务面负责判断业务解释是否成立，两边不重复。</span></div>
       </div>
 
       <div class="hrsec">
-        <div class="hr-head"><span class="hn">二</span><h3 class="editable">薪资与流水（对齐预期）</h3></div>
-        <div class="hr-body">
-          <ul>
-            <li class="editable">当前与期望薪资结构：月薪、年终、期权或分红各占多少。</li>
-            <li class="editable">上一份（社区团购）的实际到手与离职结算情况。</li>
-            <li class="editable">期望涨幅与底线；是否接受绩效浮动部分占比较高。</li>
-          </ul>
-          <span class="purpose">目的：增长岗常含提成与奖金结构，先对齐口径，避免后期扯皮</span>
-        </div>
+        <div class="hr-head"><span class="hn">二</span><h3 class="editable">离职动因与职业选择</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">您为什么离开教培公司？离开时最不满意的是什么？</li>
+            <li class="editable">当初为什么从电商运营转教培增长？从教培又去社区团购又是怎么想的？</li>
+            <li class="editable">这三次选择背后，您判断一份工作的标准是什么？</li></ul><span class="purpose">目的：看动因是「被推着走」还是「主动选择」。连续跨了三个行业，判断其职业决策是否围绕能力积累，而非只看短期收入。</span></div>
       </div>
 
       <div class="hrsec">
-        <div class="hr-head"><span class="hn">三</span><h3 class="editable">岗位匹配（把画像落到人）</h3></div>
-        <div class="hr-body">
-          <ul>
-            <li class="editable">管过最大团队多少人、直接汇报几人、是否做过跨城管理。</li>
-            <li class="editable">增长经验覆盖哪些渠道（投放、裂变、内容、BD），哪些亲自操盘、哪些带人做。</li>
-            <li class="editable">放量过程中成本反弹的处理经验（对应成功要素「成本不失控」）。</li>
-            <li class="editable">JD 优先项：有无直播或电商闭环经验，只问有无与迁移意愿。</li>
-          </ul>
-          <span class="purpose">目的：补齐业务面可能没覆盖的画像维度，尤其是管理层级与行业缺口</span>
-        </div>
+        <div class="hr-head"><span class="hn">三</span><h3 class="editable">稳定性与驻场安排</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">您家安在上海哪里？未来 5 年有没有离开上海的打算？</li>
+            <li class="editable">岗位需要和产品、数据、市场三方紧密协作，您能接受的加班强度是怎样的？</li>
+            <li class="editable">如果项目需要短期出差到杭州或广州，您怎么安排？</li></ul><span class="purpose">目的：提前把协作强度和出差可能性说清楚，降低后期扯皮。只问安排与意愿，不涉及婚育等隐私。</span></div>
       </div>
 
       <div class="hrsec">
-        <div class="hr-head"><span class="hn">四</span><h3 class="editable">动机与风险（双向确认）</h3></div>
-        <div class="hr-body">
-          <ul>
-            <li class="editable">离开社区团购的真实原因；14 个月空档期的安排（中性问法，只问事实）。</li>
-            <li class="editable">为什么选择这个阶段、这个规模的公司；对岗位的真实期待。</li>
-            <li class="editable">到岗时间；出差与通勤可接受度（只问工作安排，不涉及家庭情况）。</li>
-            <li class="editable">反问环节：他最想确认的三件事是什么。</li>
-          </ul>
-          <span class="purpose">目的：稳定性与动机是最大风险项，用中性框架问，不做审判式追问</span>
-        </div>
+        <div class="hr-head"><span class="hn">四</span><h3 class="editable">管理经验核真（与业务面 Q1 互补）</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">您带过的最大团队多少人？直接下属几人、间接几人？汇报关系怎么设？</li>
+            <li class="editable">招过最难的一个岗位是什么？用了多久、从哪找到的？</li>
+            <li class="editable">劝退过几个人？最近一次您怎么谈的，对方什么反应？</li></ul><span class="purpose">目的：业务面 Q1 已问过权责边界，这里只做交叉验证：同一组数字前后是否一致。若两处口径不同，是重要的诚信信号。</span></div>
       </div>
 
-    </div>
+      <div class="hrsec">
+        <div class="hr-head"><span class="hn">五</span><h3 class="editable">薪酬结构与目标对赌</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">上一份薪酬结构是怎样的：固定、绩效、奖金各占多少？实际拿到多少？</li>
+            <li class="editable">这次期望多少？固定与浮动的比例您能接受到什么程度？</li>
+            <li class="editable">如果区域目标与奖金强绑定、前 6 个月只发固定，您能接受吗？</li></ul><span class="purpose">目的：摸清预期差距与风险偏好。候选人有过小公司创业经历，可能对浮动结构接受度更高——提前对齐可避免 offer 后反悔。</span></div>
+      </div>
+
+      <div class="hrsec">
+        <div class="hr-head"><span class="hn">六</span><h3 class="editable">合规与商务边界</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">过去做增长时，您碰到过数据口径不一致的情况吗？是产品、数据还是财务的问题，您怎么处理的？</li>
+            <li class="editable">如果市场部要求把不好的数据藏起来不报，您怎么处理？</li>
+            <li class="editable">您如何理解公司的合规红线：数据造假、虚报预算、礼品、报销、关联交易？</li></ul><span class="purpose">目的：做增长和投放的人常接触预算和数据口径，合规是必查项。用具体情境而非道德表态，判断其边界感与风险意识。</span></div>
+      </div>
+
+      <div class="hrsec">
+        <div class="hr-head"><span class="hn">七</span><h3 class="editable">到岗可行性与背景调查</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">目前是否在职？手上有没有其他 offer 在谈，进展到哪一步？</li>
+            <li class="editable">最快到岗时间是什么时候？</li>
+            <li class="editable">如果做背景调查，您希望我们联系哪位前领导？有没有需要提前说明的情况？</li></ul><span class="purpose">目的：摸清竞争态势与到岗风险。主动给背调窗口并观察其坦诚度，比事后发现隐瞒的代价低得多。</span></div>
+      </div>
+
+      <div class="hrsec">
+        <div class="hr-head"><span class="hn">八</span><h3 class="editable">反问与双向吸引</h3></div>
+        <div class="hr-body"><ul>            <li class="editable">您有什么想问我们的？</li>
+            <li class="editable">关于区域目标、团队编制、汇报关系，您最想确认哪一点？</li>
+            <li class="editable">如果让您用一句话说服我们选您，您会说什么？</li></ul><span class="purpose">目的：收尾双向选择。从其提问判断关注点偏「要资源」还是「担责任」，并借机坦诚说明岗位真实挑战与公司能给的支持。</span></div>
+      </div></div>
     <button class="add-btn" type="button" onclick="addCard('hr')">+ 添加 HR面问题卡</button>
   </section>
 
+
   <!-- ===== 6 时间分配表 ===== -->
+  
   <section data-mod="agenda">
     <div class="sec"><span class="no">AGENDA</span><h2>时间分配与节奏要点</h2></div>
     <div class="tables">
       <div class="ttable" id="biz-tt">
         <h3><span class="tt">业</span>业务面 30min</h3>
-        <div class="trow"><span>开场 / 优势展开（聊最有代表性的一段增长）</span><span class="min">3'</span></div>
-        <div class="trow"><span>核心能力深挖（增长打法 + 情境前瞻）</span><span class="min">15'</span></div>
-        <div class="trow"><span>验证与风险（口径、空档、离职归因）</span><span class="min">7'</span></div>
-        <div class="trow"><span>动机与吸引（双向收尾）</span><span class="min">5'</span></div>
+        <div class="trow"><span>事实摸底：管理权责、数字构成（Q1-Q2）</span><span class="min">5'</span></div>
+        <div class="trow"><span>优势展开：从 0 到 1、裂变可复制、团队搭建（Q3-Q5）</span><span class="min">12'</span></div>
+        <div class="trow"><span>情境前瞻：经营 P&L、资源协作（Q6-Q7）</span><span class="min">7'</span></div>
+        <div class="trow"><span>验证风险：14 个月空档（Q8）</span><span class="min">4'</span></div>
+        <div class="trow"><span>动机与吸引：双向收尾（Q9）</span><span class="min">2'</span></div>
       </div>
       <div class="pace">
         <h3>面试节奏要点</h3>
-        <div class="pace-row"><b>开场铺垫</b><span class="editable">「先聊聊你做得最漂亮的一段增长」；说明 30 分钟结构与节奏，让他进入叙事状态而不是防御状态</span></div>
-        <div class="pace-row"><b>收尾 5 分钟</b><span class="editable">坦诚说明这条线的真实挑战（ROI 1.3、预算压力）与能给他的授权；留时间反问；明确下一步时间点</span></div>
-        <div class="pace-row"><b>追问礼仪</b><span class="editable">深挖用好奇姿态（「这步当时怎么判断的」）；同一话题连续追问 3 次仍模糊时换个角度，不加压</span></div>
+        <div class="pace-row"><b>开场铺垫</b><span class="editable">「先花几分钟把您的基本盘对一下，后面好聊具体打法」——把事实摸底包装成信息收集，不是审问；准备好纸笔记录人数、金额、口径</span></div>
+        <div class="pace-row"><b>事实与判断分离</b><span class="editable">Q1-Q2 只记录不评价，哪怕数字有疑点也先记下；疑点留到 Q8 及追问再收口，避免前半段就形成对抗</span></div>
+        <div class="pace-row"><b>收尾 5 分钟</b><span class="editable">坦诚说明岗位真实挑战（预算管理、跨团队协作）与公司能给的支持；留时间反问；明确下一步时间点</span></div>
       </div>
     </div>
   </section>
 
+
   <!-- ===== footer ===== -->
   <footer data-mod="footer" style="margin-top:34px;padding-top:16px;padding-bottom:260px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:16px;color:var(--ink-2)">
     <span><b>面试官工作台</b> · 由 interviewer-kit 生成</span>
-    <span>示例产物 · 可点击编辑 · 导出长图为 750px 版式</span>
+    <span>可点击编辑 · 导出长图为 750px 版式</span>
   </footer>
 
 </div>
@@ -612,7 +701,7 @@
     if(kind==='biz'){
       d.innerHTML=
         '<button class="del-btn" type="button" onclick="delCard(this)">删除</button>'+
-        '<div class="qc-head"><span class="qc-num">'+num+'</span><span class="qc-dim editable">'+label+'：</span></div>'+
+        '<div class="qc-head"><span class="qc-num">'+num+'</span><span class="qc-type s editable">S 成功要素</span><span class="qc-dim editable">'+label+'：</span></div>'+
         '<div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">（填写主问题）</p></div>'+
         '<div class="qc-follow"><span class="qc-label">追问路径</span><div>'+
           '<p class="editable"><span class="skill-tag">[STAR补问]</span>（追问话术）</p>'+
@@ -681,9 +770,9 @@
     // B9: 克隆体清空 id，避免与原页面重复 id 污染 DOM（导出用 data-mod 定位，不依赖 id）
     [].slice.call(clone.querySelectorAll('[id]')).forEach(function(n){n.removeAttribute('id');});
     var keepMap={
-      all:{header:1,match:1,checkpoints:1,biz:1,hr:1,agenda:1,footer:1},
-      biz:{header:1,match:1,checkpoints:1,biz:1,agenda:1,footer:1},
-      hr:{header:1,match:1,checkpoints:1,hr:1,agenda:1,footer:1}
+      all:{header:1,profile:1,match:1,checkpoints:1,biz:1,hr:1,agenda:1,footer:1},
+      biz:{header:1,profile:1,match:1,checkpoints:1,biz:1,agenda:1,footer:1},
+      hr:{header:1,profile:1,match:1,checkpoints:1,hr:1,agenda:1,footer:1}
     };
     var keep=keepMap[scope];
     [].slice.call(clone.querySelectorAll('[data-mod]')).forEach(function(n){

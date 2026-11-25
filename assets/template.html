@@ -36,7 +36,7 @@
   .sec .no{font-size:17px;font-weight:700;color:var(--orange);letter-spacing:.08em}
   .sec h2{font-size:26px;font-weight:800}
   .sec .hint{font-size:16px;color:var(--ink-2);margin-left:auto;text-align:right;line-height:1.5}
-  /* ===== 匹配度 + 核心优势（合并模块） ===== */
+  /* ===== 匹配度诊断（维度 + 结论） ===== */
   .match{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
   .match-top{display:flex;align-items:center;gap:16px}
   .match-badge{width:82px;height:82px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;flex-shrink:0}
@@ -53,6 +53,42 @@
   .core li{font-size:17px;color:var(--ink-2);line-height:1.75;padding:7px 0;border-bottom:1px dashed var(--line);list-style:none}
   .core li:last-child{border-bottom:none}
   .core b{color:var(--ink)}
+  /* ===== 人选画像导读（中立铺开：背景 / 路径 / 能力 / 数字，不挑亮点） ===== */
+  .profile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px 6px}
+  .prof-block{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .prof-block:last-child{border-bottom:none}
+  .prof-h{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:9px;display:flex;align-items:center;gap:8px}
+  .prof-h::before{content:"";width:4px;height:14px;background:var(--orange);border-radius:2px}
+  .timeline{width:100%}
+  .tl-row{display:grid;grid-template-columns:130px 1fr 1fr 1.5fr;gap:10px;padding:7px 0;font-size:15px;color:var(--ink-2);line-height:1.6;border-bottom:1px dashed var(--line)}
+  .tl-row:last-child{border-bottom:none}
+  .tl-time{font-weight:700;color:var(--ink);white-space:nowrap}
+  .tl-org{font-weight:600;color:var(--navy)}
+  .tl-row.gap-row{background:#FBEFED;border-radius:8px;padding:7px 10px}
+  .tl-row.gap-row .tl-time{color:var(--red)}
+  .cap-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .cap-col{border-radius:12px;padding:12px 14px}
+  .cap-col.ok{background:#EFF8F3;border:1px solid #C7E4D5}
+  .cap-col.part{background:#FDF3EA;border:1px solid #F2D9BF}
+  .cap-col.gap{background:#FBEFED;border:1px solid #F0C9C2}
+  .cap-t{font-size:15px;font-weight:800;margin-bottom:8px}
+  .cap-col.ok .cap-t{color:var(--green)}
+  .cap-col.part .cap-t{color:#B45A1C}
+  .cap-col.gap .cap-t{color:var(--red)}
+  .cap-col ul{list-style:none;padding-left:0}
+  .cap-col li{font-size:14px;line-height:1.6;padding:3px 0 3px 14px;position:relative;color:var(--ink-2)}
+  .cap-col li::before{content:"";position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%}
+  .cap-col.ok li::before{background:var(--green)}
+  .cap-col.part li::before{background:#E8833A}
+  .cap-col.gap li::before{background:var(--red)}
+  .num-anchor{font-size:15px;line-height:1.8;color:var(--ink-2);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+  /* ===== 题源类型标签（F/S/C/R） ===== */
+  .qc-type{font-size:13px;font-weight:700;border-radius:6px;padding:3px 8px;background:var(--navy-2);color:#fff;flex-shrink:0}
+  .qc-type.f{background:#2A5BB7}
+  .qc-type.s{background:var(--green)}
+  .qc-type.c{background:var(--orange)}
+  .qc-type.r{background:var(--red)}
+  .qc-type.m{background:#6B4FBB}
   /* ===== 列表卡 ===== */
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-top:12px}
   .card p,.card li{font-size:17px;color:var(--ink-2);line-height:1.75}
@@ -138,7 +174,7 @@
   .tb-btn.alt:hover{background:#D06E2A}
   #export-wrap{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 6px 18px rgba(30,42,68,.18)}
   #export-wrap .tb-btn{box-shadow:none;padding:9px 14px;font-size:13px}
-  /* ===== 竖版（≤600px）：真实排版不缩放，正文≥14px、主问题 17px；导出时克隆体带 .export-clone 类，不应用竖版规则，保持 750px 桌面版式 ===== */
+  /* ===== 竖版（≤600px）：真实排版不缩放，正文≥14px、主问题 17px；导出长图也走竖版克隆体（375px），让手机查看与转发更友好 ===== */
   @media (max-width:600px){
     .page:not(.export-clone){width:100%;padding:20px 12px 280px}
     .page:not(.export-clone) .hero{padding:18px 16px;border-radius:16px}
@@ -168,6 +204,13 @@
     .page:not(.export-clone) .qcard{padding:16px 14px}
     .page:not(.export-clone) .qc-num{width:30px;height:30px;font-size:15px}
     .page:not(.export-clone) .qc-dim{font-size:13px}
+    .page:not(.export-clone) .profile{padding:14px}
+    .page:not(.export-clone) .prof-h{font-size:14px}
+    .page:not(.export-clone) .tl-row{grid-template-columns:1fr;gap:2px;font-size:13px;padding:6px 0}
+    .page:not(.export-clone) .cap-grid{grid-template-columns:1fr}
+    .page:not(.export-clone) .cap-col li{font-size:13px}
+    .page:not(.export-clone) .num-anchor{font-size:13px}
+    .page:not(.export-clone) .qc-type{font-size:11px;padding:2px 6px}
     .page:not(.export-clone) .qc-main{display:block}
     .page:not(.export-clone) .qc-label{display:block;width:auto;font-size:12px;margin-bottom:4px;padding-top:0}
     .page:not(.export-clone) .qc-question{font-size:17px;line-height:1.7}
@@ -223,9 +266,49 @@
     <button class="add-chip" type="button" onclick="addChip()">+ 添加聚焦点</button>
   </section>
 
-  <!-- ===== 2 匹配度与核心优势（合并） ===== -->
+  <!-- ===== 2 人选画像 · 简历导读（中立铺开：先看背景路径，再看人岗匹配） ===== -->
+  <section data-mod="profile">
+    <div class="sec"><span class="no">PROFILE</span><h2>人选画像 · 简历导读</h2><span class="hint">中立呈现，不挑亮点</span></div>
+    <div class="profile">
+      <!-- 职业路径：路径复杂或有断档时展开为时间线；简单履历只给一句话概述（替换本块即可） -->
+      <div class="prof-block" data-sample>
+        <h3 class="prof-h">职业路径</h3>
+        <div class="timeline">
+          <div class="tl-row"><span class="tl-time editable">2020.05–2023.07</span><span class="tl-org editable">XX 科技</span><span class="tl-role editable">区域负责人</span><span class="tl-out editable">累计合同 X 万 / 回款 Y 万</span></div>
+          <div class="tl-row"><span class="tl-time editable">2019.05–2020.04</span><span class="tl-org editable">XX 安全</span><span class="tl-role editable">销售经理</span><span class="tl-out editable">业绩 X 万</span></div>
+          <div class="tl-row"><span class="tl-time editable">2013.07–2019.04</span><span class="tl-org editable">XX 设计</span><span class="tl-role editable">项目经理</span><span class="tl-out editable">工程设计 / 客户协调</span></div>
+          <div class="tl-row gap-row"><span class="tl-time editable">2023.08–至今</span><span class="tl-org editable">空档</span><span class="tl-role editable">—</span><span class="tl-out editable">去向待核实</span></div>
+        </div>
+      </div>
+      <!-- 能力要素三栏盘点：始终输出，三栏对称；某栏无内容写「无」 -->
+      <div class="prof-block">
+        <h3 class="prof-h">能力要素盘点</h3>
+        <div class="cap-grid">
+          <div class="cap-col ok">
+            <div class="cap-t">已验证的能力</div>
+            <ul><li class="editable">省级政企客户覆盖</li><li class="editable">大单签单能力</li><li class="editable">方案与立项申报</li></ul>
+          </div>
+          <div class="cap-col part">
+            <div class="cap-t">自述待验证</div>
+            <ul><li class="editable">渠道体系搭建（缺产出数据）</li><li class="editable">全流程操盘（待核回款）</li></ul>
+          </div>
+          <div class="cap-col gap">
+            <div class="cap-t">明确缺失</div>
+            <ul><li class="editable">带 20 人团队证据</li><li class="editable">经营数据（毛利 / 费用 / 人效）</li><li class="editable">履历空档</li></ul>
+          </div>
+        </div>
+      </div>
+      <!-- 关键数字锚点：正负数字并列，不筛选 -->
+      <div class="prof-block">
+        <h3 class="prof-h">关键数字锚点</h3>
+        <p class="num-anchor editable">合同 X 万 / 回款 Y 万 / 回款率 Z% / 空档 N 个月 / 团队规模无数据</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3 匹配度诊断（结论，基于画像逐维对照） ===== -->
   <section data-mod="match">
-    <div class="sec"><span class="no">MATCH</span><h2>匹配度与核心优势</h2><span class="hint">按岗位画像逐维对照</span></div>
+    <div class="sec"><span class="no">MATCH</span><h2>匹配度诊断</h2><span class="hint">按岗位画像逐维对照</span></div>
     <div class="match">
       <div class="match-top">
         <div class="match-badge mid editable">中</div>
@@ -235,14 +318,6 @@
         <span class="md ok">维度 · 达标</span>
         <span class="md part">维度 · 部分</span>
         <span class="md gap">维度 · 缺口</span>
-      </div>
-      <div class="core">
-        <h3 class="editable">核心优势</h3>
-        <ul>
-          <li class="editable"><b>优势一</b>：证据 → 岗位关联</li>
-          <li class="editable"><b>优势二</b>：证据 → 岗位关联</li>
-          <li class="editable"><b>优势三</b>：证据 → 岗位关联</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -267,7 +342,7 @@
       <!-- data-sample：示例教学卡，生成时替换为真实内容 -->
       <div class="qcard" data-sample>
         <button class="del-btn" type="button" onclick="delCard(this)">删除</button>
-        <div class="qc-head"><span class="qc-num">Q1</span><span class="qc-dim editable">考察维度：…</span></div>
+        <div class="qc-head"><span class="qc-num">Q1</span><span class="qc-type f editable">F 事实摸底</span><span class="qc-dim editable">考察维度：…</span></div>
         <div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">主问题文本（引用简历具体经历/数据）。</p></div>
         <div class="qc-follow">
           <span class="qc-label">追问路径</span>
@@ -416,7 +491,7 @@
     if(kind==='biz'){
       d.innerHTML=
         '<button class="del-btn" type="button" onclick="delCard(this)">删除</button>'+
-        '<div class="qc-head"><span class="qc-num">'+num+'</span><span class="qc-dim editable">'+label+'：</span></div>'+
+        '<div class="qc-head"><span class="qc-num">'+num+'</span><span class="qc-type s editable">S 成功要素</span><span class="qc-dim editable">'+label+'：</span></div>'+
         '<div class="qc-main"><span class="qc-label">主问题</span><p class="qc-question editable">（填写主问题）</p></div>'+
         '<div class="qc-follow"><span class="qc-label">追问路径</span><div>'+
           '<p class="editable"><span class="skill-tag">[STAR补问]</span>（追问话术）</p>'+
@@ -480,14 +555,14 @@
     btn.textContent=LNG.generating;
     var page=document.getElementById('page');
     var clone=page.cloneNode(true);
-    clone.classList.add('export-clone');
-    clone.style.transform='';clone.style.transformOrigin='';clone.style.width='750px';
+    // 导出克隆体用竖版手机版式（375px），让 html2canvas 自然吃到 @media (max-width:600px) 的字号规则
+    clone.style.transform='';clone.style.transformOrigin='';clone.style.width='375px';
     // B9: 克隆体清空 id，避免与原页面重复 id 污染 DOM（导出用 data-mod 定位，不依赖 id）
     [].slice.call(clone.querySelectorAll('[id]')).forEach(function(n){n.removeAttribute('id');});
     var keepMap={
-      all:{header:1,match:1,checkpoints:1,biz:1,hr:1,agenda:1,footer:1},
-      biz:{header:1,match:1,checkpoints:1,biz:1,agenda:1,footer:1},
-      hr:{header:1,match:1,checkpoints:1,hr:1,agenda:1,footer:1}
+      all:{header:1,profile:1,match:1,checkpoints:1,biz:1,hr:1,agenda:1,footer:1},
+      biz:{header:1,profile:1,match:1,checkpoints:1,biz:1,agenda:1,footer:1},
+      hr:{header:1,profile:1,match:1,checkpoints:1,hr:1,agenda:1,footer:1}
     };
     var keep=keepMap[scope];
     [].slice.call(clone.querySelectorAll('[data-mod]')).forEach(function(n){
