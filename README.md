@@ -27,27 +27,50 @@ Each card states the question, its design rationale, what a strong answer contai
 每张卡写明问题本身、设计依据、合格回答应包含什么、红旗信号长什么样、以及如何追问。产物是单文件 HTML：任何一行都能就地修改，导出长图后直接发给面试官。
 
 ```
-JD 文本 / 简历文件           一次对话
-      │                         │
-      ▼                         ▼
-┌──────────────┐          ┌──────────────┐
-│ 核心要求提取   │          │ 标志性成果锚定  │
-│ 哪些硬条件     │  ──►    │ 哪几个项目能   │
-│ 哪些优先项     │          │ 证明这些条件   │
-│ 哪些可迁移     │          │                │
-└──────────────┘          └──────────────┘
-      │                         │
-      └─────────┬───────────────┘
-                ▼
-          问题卡 + 节奏表
-                │
-                ▼
-         可编辑 HTML
-                │
-                ▼
-         750px 长图导出
-          （微信 / Slack / Lark 直接发）
+JD / resume                    One conversation · 5 steps + hard self-check
+     │                                │
+     ▼                                ▼
+┌──────────────┐              ┌──────────────────────────┐
+│ Role core req │              │ ① Profile guide          │
+│ hard / prefer │  ──────►    │    career path (conditional)│
+│ transferable  │              │    capability grid        │
+└──────────────┘              │    (validated / claimed /  │
+                               │     missing)              │
+┌──────────────┐              │    key number anchors      │
+│ Candidate sig │              └──────────────────────────┘
+│ outcomes     │                       │
+└──────────────┘                       ▼
+     │                        ┌──────────────────────────┐
+     └────────────┬───────────│ ② Fit diagnosis + gaps    │
+                  ▼           │   (downgrade: core-gap →  │
+       ┌───────────────────────────────┐   never "high";  │
+       │ ③ Question cards              │   red-lines first)│
+       │    Type F (fact-find, 2-3)  ←─┘                    │
+       │    Type S (success, 3-4)       │
+       │    Type C (scenario + gap, 1-2) │
+       │    Type R (risk, 1-2)          │
+       │    Type M (motivation, 1)      │
+       │                                │
+       │  + Mgmt 3-step (when role core │
+       │    includes team leadership:   │
+       │    scope → track record → ext) │
+       └───────────────────────────────┘
+                  │
+                  ▼
+       ④ Self-check (10-item; fail → redo)
+                  │
+                  ▼
+       ⑤ Editable HTML · 3-channel export
+                  │
+                  ▼
+          375px portrait PNG
+        (mobile-first, easy to forward)
 ```
+
+**Hard constraints on question types:**
+- Type F must come first (2-3 cards), turn fuzzy resume claims into verifiable facts; every subsequent S/C/R card must state in its design rationale which fact it anchors to — no questions that float free of the candidate's actual track record
+- When the role core includes team leadership, the **management 3-step** applies: scope (headcount + authority) → track record (hire / develop / retain / offboard) → external projection (only when first two steps yield evidence). No evidence → mark as hard gap, skip the projection step
+- Chinese interview language: full「您」(no「你」), no leading-interrogation phrasing ("到底"/"是不是"/"再挑一个"), sensitive topics use a neutral frame with options ("是家庭安排 / 创业 / 休息充电？")
 
 Three input modes: JD plus resume (default); a role from the built-in library plus resume (skips JD extraction, for repeat hiring in the same function); resume only (generic profile, with fit explicitly marked as not role-anchored).
 
@@ -128,7 +151,7 @@ The interviewer follows the timing plan: open with a broad question and let the 
 ### 工程层
 
 - 单文件 HTML，内联渲染引擎（html2canvas），无 CDN，断网可用
-- 手机端 = 375px 单列阅读视图；导出 = 750px 桌面版式（有意为之，非 bug——1.75x scale 保证清晰度）
+- Mobile view = 375px single column; export = 375px portrait (html2canvas naturally picks up the media-query rules — body 14px, main question 17px, tightened spacing)
 - 自适应 canvas scale（上限 16Kpx），长图分段渲染，PNG 超过 ~12 MB 自动降级 JPEG
 - 导出失败弹 toast；不会悄悄生成白图然后"成功"
 - 导出按钮 busy-lock，防止双击崩溃
